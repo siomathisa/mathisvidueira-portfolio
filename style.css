@@ -190,6 +190,17 @@ section {
   filter: grayscale(0%);
 }
 
+/* RESPONSIVE */
+
+@media only screen and (max-width: 768px) {
+  #apropos{
+    width: 80%;
+  }
+  .card-apropos{
+    width: 90%;
+  }
+}
+
 /* PARCOURS */
 #parcours {
   height: auto;
@@ -228,7 +239,15 @@ section {
 #bulletin {
   color: black;
 }
+/* RESPONSIVE */
 
+@media only screen and (max-width: 768px) {
+  .arbre-parcours{
+    width: 95%;
+    margin: 0;
+    padding: 0;
+  }
+}
 /* SKILLS */
 #competences {
   background-color: rgba(0, 0, 0, 0.500);
@@ -286,23 +305,17 @@ section {
   transform: scale(1.1);
 }
 
+/* RESPONSIVE */
 
-.langues {
-  width: 100%;
-  height: auto;
-  border-top: solid white;
+@media only screen and (max-width: 768px) {
+  #competences{
+    width: 90%;
+  }
+  .skills-list img{
+    width: 60px;
+    height: 60px;
+  }
 }
-
-.langues img {
-  width: 100px;
-  height: 60px;
-}
-
-.langues h2 {
-  text-decoration: underline;
-}
-
-
 
 /* PROJETS */
 #projets {
@@ -404,6 +417,17 @@ section {
   fill: #ffffff;
 }
 
+@media only screen and (max-width: 768px) {
+  #projet{
+    width: 100%;
+  }
+  .orga-projets{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* EXPERIENCES PRO */
 #pro {
   background-color: rgba(0, 0, 0, 0.500);
@@ -422,6 +446,15 @@ section {
 .pro-logo:hover {
   transform: scale(1.05);
   transition: 0.3s;
+}
+
+@media only screen and (max-width: 768px) {
+  .pro-logo{
+    height: 100px;
+  }
+  #pro{
+    width: 90%;
+  }
 }
 
 /* VEILLE TECHNOLOGIQUE */
@@ -512,76 +545,10 @@ section {
   box-shadow: #c0392b 0px 3px 2px,#000 0px 3px 5px;
 }
 
-/* PAGE STAGES */
-#stages {
-  width: 100%;
-  min-height: 70vh;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: "Oswald", sans-serif;
-}
-
-.stage-laconv a {
-  color:rgb(255, 190, 116);
-}
-.stage-laconv a:hover {
-  color: orange;
-}
-
-.stage-ilot a {
-  color:rgb(103, 221, 236);
-}
-.stage-ilot a:hover {
-  color:rgb(158, 230, 240);
-}
-
-.stage-laconv, .stage-ilot {
-  background-color: rgba(255, 255, 255, 0.300);
-  width: 65%;
-  border-radius: 10px;
-  height: auto;
-  margin: 20px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.stage-laconv h2, .stage-ilot h2 {
-  text-decoration: underline;
-}
-
-.stage-laconv h4, .stage-ilot h4 {
-  text-align: left;
-  margin: 20px 200px;
-}
-
-.stage-ilot h2 {
-  color: rgb(103, 221, 236);
-}
-.stage-laconv h2 {
-  color: rgb(255, 190, 116);
-}
-
-.stage-laconv h3, .stage-ilot h3 {
-  color: black;
-}
-
-.stage-laconv #logo, .stage-ilot #logo {
-  height: 150px;
-  width: auto;
-
-}
-
-.screens {
-  width: 70%;
-  height: auto;
-  margin: 10px;
+@media only screen and (max-width: 768px) {
+  #contact{
+    width: 95%;
+  }
 }
 
 /* FOOTER */
@@ -594,6 +561,7 @@ footer {
   width: 100%;
   font-family: "Bebas Neue", sans-serif;
   font-size: large;
+  box-sizing: border-box;
 }
 
 .linkedin {
@@ -644,4 +612,39 @@ footer {
   background-color: #0077b5;
 }
 
-  
+
+
+@media only screen and (max-width: 768px) {
+  /* Réorganiser la mise en page pour les écrans de taille moyenne */
+  .sections {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  /* Réduire la taille des polices pour les écrans de taille moyenne */
+  .sections h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Modifier la disposition des compétences pour les écrans de taille moyenne */
+  .skills-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Ajuster la largeur des cartes de projet pour les écrans de taille moyenne */
+  .project-card {
+    width: 80%;
+  }
+
+  /* Réduire la taille des polices de projet pour les écrans de taille moyenne */
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Ajuster la largeur du formulaire de contact pour les écrans de taille moyenne */
+  #form-contact {
+    width: 80%;
+  }
+}
