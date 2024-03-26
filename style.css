@@ -178,8 +178,7 @@ section {
 }
 
 .img-passions{
-  width: 20%;
-  margin: 10px 0;
+  width: 10%;
   height: auto;
   filter:grayscale(70%)
 }
@@ -199,6 +198,12 @@ section {
   }
   .card-apropos{
     width: 90%;
+  }
+  .img-passions{
+    width: 20%;
+  }
+  #apropos {
+    padding-bottom: 20px;
   }
 }
 
@@ -244,6 +249,9 @@ section {
 /* RESPONSIVE */
 
 @media only screen and (max-width: 768px) {
+  #parcours {
+    width: 70%;
+  }
   .arbre-parcours{
     width: 95%;
     margin: 0;
@@ -260,7 +268,6 @@ section {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
-
 
 .skills-list {
   list-style: none;
@@ -370,11 +377,11 @@ section {
   height: auto;
   max-width: 100%;
   border-radius: 8px;
-  transition: transform 0.3s ease; /* Ajoute une transition fluide */
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover .project-image {
-  transform: scale(1.1); /* Augmente la taille de l'image */
+  transform: scale(1.1);
 }
 
 .orga-projets {
@@ -431,6 +438,9 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .project-card {
+    margin: 10px 0;
   }
 }
 
@@ -627,11 +637,14 @@ footer {
 
 
 @media only screen and (max-width: 768px) {
+  body {
+    margin-top: 200px;
+  }
   /* Réorganiser la mise en page pour les écrans de taille moyenne */
   .sections {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
   }
 
