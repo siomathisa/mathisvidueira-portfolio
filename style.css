@@ -25,12 +25,83 @@ body {
 }*/
 
 /* LOADING */
+ /* Styles pour l'écran de chargement */
+ #loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.850);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
+.loading-container {
+  width: 100px;
+  height: 100px;
+  perspective: 600px;
+  margin-bottom: 20px; /* Ajout de marge en bas */
+}
+
+.loading-cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 2s infinite linear;
+}
+
+.loading-cube .face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 83, 83);
+  opacity: 0.7;
+}
+
+.loading-cube .face:nth-child(1) {
+  transform: rotateY(0deg) translateZ(50px);
+}
+
+.loading-cube .face:nth-child(2) {
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.loading-cube .face:nth-child(3) {
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+.loading-cube .face:nth-child(4) {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.loading-cube .face:nth-child(5) {
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.loading-cube .face:nth-child(6) {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.loading-text {
+  color: white;
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+}
+
+@keyframes rotate {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
 /* HEADER */
 header {
     color: #fff;
     padding: 20px 0;
-    background-color: rgba(29, 29, 29, 0.459);
+    background-color: rgba(29, 29, 29, 0.705);
     backdrop-filter: blur(20px);
     text-align: center;
     font-family: "Bebas Neue", sans-serif;
