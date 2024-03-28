@@ -484,7 +484,7 @@ section {
   font-weight: 700;
   font-size: 1em;
   transition: 400ms;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .button svg path {
