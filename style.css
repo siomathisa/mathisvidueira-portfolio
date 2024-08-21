@@ -1,0 +1,564 @@
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variables de couleur */
+:root {
+    --color-text: #bbbbbb;
+    --color-text-placeholder: #888888;
+    --color-background: #333333;
+    --color-header-background: #252525;
+    --color-header-shadow: rgba(0, 0, 0, 0.2);
+    --color-footer-background: #252525;
+    --color-link: #bbbbbb;
+    --color-link-hover: #ff4757;
+    --color-button-background: #ff4757;
+    --color-button-hover: #ff6b6b;
+    --color-skill-background: #333333;
+    --color-skill-shadow: rgba(0, 0, 0, 0.1);
+    --color-social-icon: #ffffff;
+    --color-border: #bbbbbb;
+    --color-scrollbar-background: #252525;
+    --color-scrollbar-thumb: #333333;
+    --color-scrollbar-thumb-hover: #252525;
+}
+
+/* Personnaliser la largeur de la scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+}
+
+/* Personnaliser la couleur de la piste de défilement (fond de la scrollbar) */
+::-webkit-scrollbar-track {
+    background-color: var(--color-scrollbar-background); /* Couleur de la piste */
+}
+
+/* Personnaliser le slider de la scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar-thumb); /* Couleur du slider */
+    border-radius: 10px; /* Arrondir les coins */
+}
+
+/* Optionnel : changer la couleur au survol */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scrollbar-thumb-hover); /* Couleur au survol */
+}
+
+/* Styles de base */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+/* Styles de l'en-tête */
+header {
+    background-color: var(--color-header-background);
+    padding: 10px 0;
+    box-shadow: 0px 4px 2px -2px var(--color-header-shadow);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-link);
+    font-weight: 600;
+    position: relative;
+    padding: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: var(--color-link-hover);
+    transition: width 0.3s;
+    width: 0;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* Styles principaux pour la page d'accueil */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+}
+
+.intro {
+    max-width: 600px;
+}
+
+.intro h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background: var(--color-button-background);
+    padding: 12px 25px;
+    border-radius: 50px;
+    justify-content: center;  /* Centre le texte horizontalement */
+    align-items: center;      /* Centre le texte verticalement */
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;          /* Ajoute un curseur pointeur */
+}
+
+.button:hover {
+    background-color: var(--color-footer-background);
+}
+
+/* Styles pour la page des compétences */
+.skills {
+    padding: 20px;
+    text-align: center;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills ul li {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-skill-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--color-skill-shadow);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--color-border);
+}
+
+.skills ul li:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.skills ul li img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.skills h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-content {
+    background: var(--color-button-background);
+    padding: 12px 25px;
+    border-radius: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-content:hover {
+    background: var(--color-button-hover);
+}
+
+/* Styles pour la page des projets */
+.projects {
+    padding: 20px;
+    text-align: center;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Styles pour les images des projets */
+.projects {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project {
+    background-color: var(--color-skill-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--color-skill-shadow);
+    padding: 15px;
+    transition: transform 0.3s ease;
+    border: 2px solid var(--color-border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Styles pour la page de contact */
+.h1-form {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--color-text);
+}
+
+/* Conteneur du formulaire */
+.main-contact {
+    display: flex;
+    flex-direction: column;
+}
+.form-contact {
+    background-color: var(--color-skill-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--color-skill-shadow);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid var(--color-border);
+}
+
+/* Styles pour les labels du formulaire */
+.form-contact label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-text);
+}
+
+/* Champs de saisie (input et textarea) */
+.form-contact input[type="email"],
+.form-contact textarea {
+    width: 95%; /* Réduire légèrement la largeur pour créer un espace */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 16px;
+    box-sizing: border-box; /* Assure que padding et border sont inclus dans la largeur */
+}
+
+.form-contact input[type="email"]::placeholder,
+.form-contact textarea::placeholder {
+    color: var(--color-text-placeholder);
+}
+
+/* Styles pour le bouton de soumission */
+.form-contact button[type="submit"] {
+    background-color: var(--color-button-background);
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.form-contact button[type="submit"]:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Styles pour la section parcours scolaire */
+.main-parcours {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch; /* Assure que les sections s'étendent à la même hauteur */
+    flex-wrap: wrap; /* Permet de s'adapter aux écrans plus petits */
+    gap: 20px; /* Espace entre les sections */
+    padding: 20px;
+}
+
+.education, .experience {
+    flex: 1;
+    min-width: 300px; /* Largeur minimale pour chaque section */
+    background-color: var(--color-skill-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--color-skill-shadow);
+    border: 2px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.education h2, .experience h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.education-item, .experience-item {
+    margin-bottom: 20px;
+    flex: 1; /* Chaque élément s'étend également */
+}
+
+.education-item h3, .experience-item h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.education-item p, .experience-item p {
+    font-size: 16px;
+}
+
+
+/* Styles du pied de page */
+footer {
+    background-color: var(--color-footer-background);
+    color: var(--color-text);
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.socialContainer {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.socialContainer:hover {
+    background: var(--color-background);
+}
+
+.socialSvg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-button-background);
+    display: block;
+    margin: 8px auto;
+}
+
+/* Media Queries pour la responsivité */
+/* Media Queries pour la responsivité */
+
+/* Petits écrans (mobiles en portrait) */
+@media (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .intro h1 {
+        font-size: 28px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    .button {
+        padding: 10px 20px;
+    }
+
+    .main-parcours {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .education, .experience {
+        min-width: 100%; /* Prend toute la largeur disponible */
+    }
+}
+
+/* Tablettes (écrans moyens) */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 32px;
+    }
+
+    .intro p {
+        font-size: 17px;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .education, .experience {
+        min-width: 45%; /* Occupe 45% de la largeur */
+    }
+}
+
+/* Grands écrans (ordinateurs) */
+@media (min-width: 769px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Petits écrans (mobiles en portrait) */
+@media (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project img {
+        height: auto;
+    }
+
+    .project {
+        padding: 10px;
+    }
+
+    .project h2 {
+        font-size: 18px;
+    }
+
+    .project p {
+        font-size: 14px;
+    }
+
+    .btn-content {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+/* Tablettes (écrans moyens) */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project h2 {
+        font-size: 18px;
+    }
+
+    .project p {
+        font-size: 14px;
+    }
+
+    .btn-content {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Grands écrans (ordinateurs) */
+@media (min-width: 769px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
