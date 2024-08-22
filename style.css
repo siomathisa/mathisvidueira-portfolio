@@ -121,6 +121,11 @@ main {
     margin-bottom: 20px;
 }
 
+.message-index {
+    color: rgb(255, 230, 0);
+    font-weight: bold;
+}
+
 .button {
     background: var(--color-button-background);
     padding: 12px 25px;
