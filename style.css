@@ -330,6 +330,7 @@ footer a:hover {
     box-shadow: 0 4px 12px var(--color-shadow);
     text-align: center;
     margin-top: 30px;
+    margin-bottom : 30px;
 }
 
 #contact h2 {
@@ -343,6 +344,7 @@ form {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+
 }
 
 form label {
