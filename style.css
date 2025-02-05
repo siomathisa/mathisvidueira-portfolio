@@ -323,7 +323,7 @@ footer a:hover {
 ========================== */
 #contact {
     padding: 40px 20px;
-    max-width: 800px;
+    max-width: 600px;
     margin: auto;
     background-color: var(--color-box);
     border-radius: 12px;
@@ -331,6 +331,37 @@ footer a:hover {
     text-align: center;
     margin-top: 30px;
     margin-bottom : 30px;
+    position:relative
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+#contact::after, #contact::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, rgb(89, 216, 84));
+    animation: 5s spin linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+@keyframes spin {
+    from{
+        --angle : 0deg;
+    }
+    to{
+        --angle : 360deg;
+    }
 }
 
 #contact h2 {
@@ -423,7 +454,6 @@ form button:hover {
     width: 50%;
     max-width: 600px; /* Limiter la largeur maximale de l'image */
     height: auto;
-    margin-bottom: 20px; /* Espacement sous l'image */
     border-radius: 8px; /* Arrondir les bords de l'image si désiré */
     object-fit: cover; /* Assurez-vous que l'image s'adapte bien */
 }
@@ -435,6 +465,7 @@ form button:hover {
 @media (max-width: 768px) {
     #contact {
         padding: 20px;
+        margin: 10px;
     }
 
     #contact h2,
