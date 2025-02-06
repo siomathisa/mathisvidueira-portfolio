@@ -345,14 +345,18 @@ footer a:hover {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: conic-gradient(from var(--angle), transparent 70%, rgb(89, 216, 84));
-    animation: 5s spin linear infinite;
+    background-image: conic-gradient(from var(--angle), transparent 70%, rgb(98, 255, 93));
+    animation: 10s spin linear infinite;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
     z-index: -1;
     padding: 3px;
     border-radius: 10px;
+}
+
+#contact::before {
+    filter: blur(1.5rem);
 }
 
 @keyframes spin {
