@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icon.png">
+    <title>Devine le nombre</title>
+</head>
+<body>
+    <h1>Devine le nombre</h1>
+    <div id="game-container">
+        <p id="best-score">Meilleur score : -</p>
+        <p>Entrez un nombre entre 1 et 100 :</p>
+        <input type="number" id="guess-input" min="1" max="100">
+        <button id="guess-btn">Valider</button>
+        <p id="result-msg"></p>
+        <button id="restart-btn" style="display: none;">Recommencer</button>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-msg"></p>
+            <button id="modal-restart-btn">Recommencer</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
