@@ -11,8 +11,26 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --bg-card: #1a1a1a;
+      --bg-nav: rgba(10, 10, 10, 0.95);
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --text-muted: #666666;
+      --accent-primary: #8b5cf6;
+      --accent-secondary: #6366f1;
+      --accent-hover: #a855f7;
+      --border-color: #2a2a2a;
+      --shadow-light: rgba(139, 92, 246, 0.1);
+      --shadow-medium: rgba(0, 0, 0, 0.3);
+      --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+      --gradient-secondary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -21,194 +39,325 @@
     }
 
     body {
-      background-color: #f3f4f6;
-      color: #1f2937;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
       line-height: 1.6;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
-    /* Scrollbar */
+    /* Scrollbar moderne */
     ::-webkit-scrollbar {
-      width: 10px;
+      width: 8px;
     }
 
     ::-webkit-scrollbar-track {
-      background: #e5e7eb;
+      background: var(--bg-secondary);
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: #06b6d4;
+      background: var(--gradient-primary);
       border-radius: 10px;
-      border: 2px solid #e5e7eb;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background-color: #0e7490;
+      background: var(--gradient-secondary);
     }
 
     /* Firefox */
     * {
       scrollbar-width: thin;
-      scrollbar-color: #06b6d4 #e5e7eb;
+      scrollbar-color: var(--accent-primary) var(--bg-secondary);
     }
 
+    /* Navigation moderne avec effet de flou */
     nav {
-      background-color: #ffffff;
-      padding: 1rem 2rem;
+      background: var(--bg-nav);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
     }
 
     nav h1 {
       font-size: 1.5rem;
-      font-weight: 800;
-      color: #06b6d4;
+      font-weight: 600;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     nav a {
-      color: #1f2937;
+      color: var(--text-secondary);
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
-      color: #06b6d4;
+      color: var(--text-primary);
     }
 
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Header avec animation moderne */
     header {
       text-align: center;
-      padding: 4rem 2rem;
-      animation: fadeIn 1.2s ease-in-out;
+      padding: 8rem 2rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+      z-index: -1;
     }
 
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #0e7490;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 1.2s ease-out;
     }
 
     header p {
-      font-size: 1.25rem;
-      color: #6b7280;
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      animation: fadeInUp 1.2s ease-out 0.2s both;
     }
 
+    /* Sections avec espacement moderne */
     section {
       scroll-margin-top: 100px;
-      padding: 4rem 2rem;
-      max-width: 1000px;
+      padding: 6rem 2rem;
+      max-width: 1200px;
       margin: auto;
-      animation: fadeUp 1s ease-in-out;
+      animation: fadeInUp 1s ease-out;
     }
 
     h2 {
-      font-size: 2rem;
-      color: #06b6d4;
-      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 3rem;
       text-align: center;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
     }
 
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
+
+    /* Grille de projets moderne et professionnelle */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
     }
 
     .project-card {
-      background-color: #ffffff;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
       border-radius: 1rem;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
-      padding: 1.5rem;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeUp 0.8s ease forwards;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeInUp 0.8s ease forwards;
       opacity: 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
     }
 
     .project-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 15px 25px rgba(6, 182, 212, 0.2);
+      border-color: var(--accent-primary);
+      box-shadow: 0 20px 40px var(--shadow-medium);
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
     }
 
     .project-card img {
       width: 100%;
-      height: 180px;
+      height: 220px;
       object-fit: cover;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease;
+      border-radius: 0.75rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.4s ease;
+      border: 1px solid var(--border-color);
     }
 
     .project-card:hover img {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
 
     .project-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: #0e7490;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
     }
 
     .project-card p {
       flex-grow: 1;
-      margin-bottom: 1rem;
-      color: #374151;
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .project-card a {
       display: inline-block;
-      margin-right: 0.75rem;
-      font-weight: 600;
-      color: #0e7490;
+      font-weight: 500;
+      color: var(--accent-primary);
       text-decoration: none;
-      transition: color 0.3s, text-decoration 0.3s;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
+      position: relative;
+      font-size: 0.9rem;
+    }
+
+    .project-card a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-primary);
+      transition: width 0.3s ease;
     }
 
     .project-card a:hover {
-      text-decoration: underline;
-      color: #164e63;
+      color: var(--accent-hover);
     }
 
+    .project-card a:hover::after {
+      width: 100%;
+    }
+
+    /* Grille de compétences moderne */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
     .skill-block {
-      background-color: #ffffff;
-      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
       border-radius: 1rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-      transition: transform 0.2s ease;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-block::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
     }
 
     .skill-block:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 15px 30px var(--shadow-medium);
+    }
+
+    .skill-block:hover::before {
+      transform: scaleX(1);
     }
 
     .skill-block h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: #0e7490;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
     }
 
     .skill-block ul {
@@ -217,102 +366,196 @@
     }
 
     .skill-block li {
-      margin-bottom: 0.4rem;
-      color: #374151;
-      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
+    .skill-block li:hover {
+      color: var(--text-primary);
+    }
+
+    /* Section contact moderne */
     .contact-mail {
-      color: #0e7490;
+      color: var(--accent-primary);
       font-weight: 600;
       text-decoration: none;
-      transition: color 0.3s;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .contact-mail::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-primary);
+      transition: width 0.3s ease;
     }
 
     .contact-mail:hover {
-      color: #164e63;
-      text-decoration: underline;
+      color: var(--accent-hover);
+    }
+
+    .contact-mail:hover::after {
+      width: 100%;
     }
 
     .cv-button {
-      background-color: #0e7490;
-      color: #fff;
-      font-size: 1rem;
-      padding: 0.75rem 1.5rem;
+      background: var(--gradient-primary);
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
       border: none;
-      border-radius: 0.5rem;
+      border-radius: 0.75rem;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cv-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-secondary);
+      transition: left 0.3s ease;
+    }
+
+    .cv-button:hover::before {
+      left: 0;
     }
 
     .cv-button:hover {
-      background-color: #164e63;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px var(--shadow-light);
     }
 
-    ul li {
-      margin-left: 1.5rem;
-      list-style-type: disc;
-      margin-bottom: 0.5rem;
+    .cv-button span {
+      position: relative;
+      z-index: 1;
     }
 
+    /* Boutons génériques */
     button {
-      background-color: #06b6d4;
-      color: #ffffff;
+      background: var(--gradient-primary);
+      color: var(--text-primary);
       padding: 0.75rem 1.5rem;
       font-weight: 600;
       border: none;
-      border-radius: 0.5rem;
+      border-radius: 0.75rem;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: all 0.3s ease;
       margin-top: 1rem;
     }
 
     button:hover {
-      background-color: #0e7490;
+      background: var(--gradient-secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px var(--shadow-light);
     }
 
+    /* Liste avec style moderne */
+    ul li {
+      margin-left: 1.5rem;
+      list-style-type: none;
+      margin-bottom: 0.75rem;
+      position: relative;
+      color: var(--text-secondary);
+    }
+
+    ul li::before {
+      content: '▸';
+      color: var(--accent-primary);
+      font-weight: bold;
+      position: absolute;
+      left: -1.5rem;
+    }
+
+    /* Footer moderne */
     footer {
       text-align: center;
-      padding: 2rem;
-      background-color: #ffffff;
-      color: #6b7280;
-      border-top: 1px solid #e5e7eb;
+      padding: 3rem 2rem;
+      background: var(--bg-secondary);
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
+    /* Bouton retour en haut moderne */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--gradient-primary);
+      color: var(--text-primary);
+      border: none;
+      padding: 1rem;
+      border-radius: 50%;
+      box-shadow: 0 8px 25px var(--shadow-medium);
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
     }
 
-    @keyframes fadeUp {
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px var(--shadow-medium);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
       from {
         opacity: 0;
         transform: translateY(40px);
       }
-
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Responsive design moderne */
     @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+      }
+
       nav ul {
         flex-direction: column;
-        gap: 0.75rem;
-        background-color: white;
+        gap: 1rem;
+        background: var(--bg-nav);
+        backdrop-filter: blur(20px);
         position: absolute;
-        top: 60px;
+        top: 100%;
         right: 1rem;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 10px 30px var(--shadow-medium);
         display: none;
+        min-width: 200px;
       }
 
       nav ul.show {
@@ -323,7 +566,32 @@
         display: block;
         cursor: pointer;
         font-size: 1.5rem;
-        color: #06b6d4;
+        color: var(--accent-primary);
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      header p {
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .project-card {
+        min-height: auto;
+      }
+
+      .project-card img {
+        height: 180px;
       }
     }
 
@@ -337,17 +605,23 @@
       }
 
       h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
 
       .project-card img {
-        height: 140px;
+        height: 160px;
       }
 
       .cv-button,
       button {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+      }
+
+      .scroll-top {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
       }
     }
   </style>
@@ -371,7 +645,7 @@
   </header>
 
   <section id="projets">
-    <h2 style="grid-column: 1 / -1;">Mes Projets</h2>
+    <h2>Mes Projets</h2>
     <div class="projects-grid">
 
       <div class="project-card">
@@ -381,7 +655,9 @@
           <strong>SQL Server</strong> permet de gérer, afficher et modifier des données médicales de manière fluide et
           sécurisée.
         </p>
-        <a href="https://github.com/siomathisa/btssio_gsb_1" target="_blank">Voir sur GitHub 👀</a>
+        <div class="project-links">
+          <a href="https://github.com/siomathisa/btssio_gsb_1" target="_blank">Voir sur GitHub</a>
+        </div>
       </div>
 
       <div class="project-card">
@@ -389,10 +665,12 @@
         <h3>Générateur de mots de passe</h3>
         <p>Un outil en <strong>Python</strong> pour générer rapidement des mots de passe personnalisés selon vos
           critères
-          (longueur, types de caractères, quantité), avec possibilité d’enregistrement automatique dans un fichier
+          (longueur, types de caractères, quantité), avec possibilité d'enregistrement automatique dans un fichier
           texte.
         </p>
-        <a href="https://github.com/siomathisa/Password_Generator" target="_blank">Voir sur GitHub 👀</a>
+        <div class="project-links">
+          <a href="https://github.com/siomathisa/Password_Generator" target="_blank">Voir sur GitHub</a>
+        </div>
       </div>
 
       <div class="project-card">
@@ -401,7 +679,9 @@
         <p>Cette application en <strong>Winforms C#</strong> calcule automatiquement votre IMC à partir de votre taille
           et
           poids, et vous indique votre catégorie (normale, surpoids, etc.) via une échelle graphique intuitive.</p>
-        <a href="https://github.com/siomathisa/IMC" target="_blank">Voir sur GitHub 👀</a>
+        <div class="project-links">
+          <a href="https://github.com/siomathisa/IMC" target="_blank">Voir sur GitHub</a>
+        </div>
       </div>
 
       <div class="project-card">
@@ -412,8 +692,10 @@
           tentative, une indication vous guide pour affiner votre réponse. Simple, rapide et efficace pour s'entraîner
           en
           logique !</p>
-        <a href="https://github.com/siomathisa/devine_nombre_js" target="_blank">Voir sur GitHub 👀</a>
-        <a href="devinenombre-js/index.html" target="_blank">Tester 🫵</a>
+        <div class="project-links">
+          <a href="https://github.com/siomathisa/devine_nombre_js" target="_blank">Voir sur GitHub</a>
+          <a href="devinenombre-js/index.html" target="_blank">Tester</a>
+        </div>
       </div>
 
       <div class="project-card">
@@ -421,17 +703,21 @@
         <h3>Calculatrice interactive</h3>
         <p>Une calculatrice moderne développée en <strong>HTML/CSS et JavaScript</strong>, idéale pour effectuer des
           opérations simples dans une interface claire et responsive.</p>
-        <a href="https://github.com/siomathisa/calculatrice_js" target="_blank">Voir sur GitHub 👀</a>
-        <a href="calculatrice-js/index.html" target="_blank">Tester 🫵</a>
+        <div class="project-links">
+          <a href="https://github.com/siomathisa/calculatrice_js" target="_blank">Voir sur GitHub</a>
+          <a href="calculatrice-js/index.html" target="_blank">Tester</a>
+        </div>
       </div>
 
       <div class="project-card">
         <img src="images/projets-blender.png" alt="Modélisation 3D Blender" loading="lazy">
-        <h3>Modélisation 3D (Débutant)</h3>
-        <p>En autodidacte, j’ai commencé à explorer <strong>Blender</strong> pour apprendre les bases de la modélisation
-          3D. J’ai réalisé quelques petits modèles simples (objets, formes stylisées) afin de me familiariser avec les
+        <h3>Modélisation 3D</h3>
+        <p>En autodidacte, j'ai commencé à explorer <strong>Blender</strong> pour apprendre les bases de la modélisation
+          3D. J'ai réalisé quelques petits modèles simples (objets, formes stylisées) afin de me familiariser avec les
           outils de sculpture, de texturage et de rendu.</p>
-        <a href="https://github.com/siomathisa/3D_Models_Blender" target="_blank">Voir sur GitHub 👀</a>
+        <div class="project-links">
+          <a href="https://github.com/siomathisa/3D_Models_Blender" target="_blank">Voir sur GitHub</a>
+        </div>
       </div>
 
     </div>
@@ -442,7 +728,7 @@
 
     <div class="skills-grid">
       <div class="skill-block">
-        <h3>💻 Langages</h3>
+        <h3>Langages</h3>
         <ul>
           <li>HTML / CSS</li>
           <li>JavaScript</li>
@@ -454,7 +740,7 @@
       </div>
 
       <div class="skill-block">
-        <h3>⚙️ Frameworks</h3>
+        <h3>Frameworks</h3>
         <ul>
           <li>Bootstrap</li>
           <li>Tailwind</li>
@@ -462,14 +748,14 @@
       </div>
 
       <div class="skill-block">
-        <h3>📐 Modélisation</h3>
+        <h3>Modélisation</h3>
         <ul>
           <li>UML</li>
         </ul>
       </div>
 
       <div class="skill-block">
-        <h3>🛠️ Outils</h3>
+        <h3>Outils</h3>
         <ul>
           <li>Git / GitHub</li>
           <li>Visual Studio / VS Code</li>
@@ -480,7 +766,7 @@
       </div>
 
       <div class="skill-block">
-        <h3>🎨 Autres</h3>
+        <h3>Autres</h3>
         <ul>
           <li>Unity</li>
           <li>Blender</li>
@@ -490,7 +776,7 @@
       </div>
 
       <div class="skill-block">
-        <h3>🌍 Langues</h3>
+        <h3>Langues</h3>
         <ul>
           <li>Français : courant</li>
           <li>Anglais : niveau B2</li>
@@ -506,30 +792,30 @@
     <p>
       Développeur web en apprentissage, je suis passionné par la création d'interfaces modernes, dynamiques et
       intuitives.
-      Curieux, rigoureux et motivé, j’aime relever des défis techniques, apprendre de nouvelles technologies et
+      Curieux, rigoureux et motivé, j'aime relever des défis techniques, apprendre de nouvelles technologies et
       concevoir des projets utiles et bien structurés.
-      Je suis actuellement à la recherche d’une alternance pour intégrer une 3ᵉ année de Bachelor à partir de septembre
+      Je suis actuellement à la recherche d'une alternance pour intégrer une 3ᵉ année de Bachelor à partir de septembre
       2025.
     </p>
 
-    <div style="margin-top: 3rem;">
-      <h3 style="font-size: 1.5rem; color: #0e7490; margin-bottom: 1rem;">🎓 Formations</h3>
+    <div style="margin-top: 4rem;">
+      <h3 style="font-size: 1.8rem; color: var(--accent-primary); margin-bottom: 1.5rem;">Formations</h3>
       <ul>
         <li><strong>BTS SIO – SLAM</strong>, Lycée Voillaume, Aulnay-sous-Bois (2022 – 2024)</li>
         <li><strong>Bac Général</strong>, spécialités Maths et Physique-Chimie – Mention Bien (2019 – 2022)</li>
       </ul>
 
-      <h3 style="font-size: 1.5rem; color: #0e7490; margin: 2rem 0 1rem;">💼 Expériences professionnelles</h3>
+      <h3 style="font-size: 1.8rem; color: var(--accent-primary); margin: 3rem 0 1.5rem;">Expériences professionnelles</h3>
       <ul>
         <li><strong>Janv. 2024 – Stage Développeur Web</strong> – Restaurant La Convivialité<br>
           Refonte du site vitrine en HTML, CSS, JS et maintenance front-end</li>
-        <li><strong>Juin 2023 – Stage Support Informatique</strong> – Maison d’accueil L’Îlot<br>
+        <li><strong>Juin 2023 – Stage Support Informatique</strong> – Maison d'accueil L'Îlot<br>
           Déploiement de postes, maintenance logicielle, inventaire</li>
         <li><strong>Fév. – Août 2025 – Employé Libre-Service</strong> – Carrefour Market<br>
-          Mise en rayon, commandes Drive, rigueur & travail d’équipe</li>
+          Mise en rayon, commandes Drive, rigueur & travail d'équipe</li>
       </ul>
 
-      <h3 style="font-size: 1.5rem; color: #0e7490; margin: 2rem 0 1rem;">🎯 Centres d’intérêt</h3>
+      <h3 style="font-size: 1.8rem; color: var(--accent-primary); margin: 3rem 0 1.5rem;">Centres d'intérêt</h3>
       <ul>
         <li>Football (pratique régulière)</li>
         <li>Tennis (compétition)</li>
@@ -543,15 +829,15 @@
   <section id="contact">
     <h2>Contact</h2>
     <div
-      style="background-color: #ffffff; padding: 2rem; border-radius: 1rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04); text-align: center;">
+      style="background: var(--bg-card); padding: 3rem; border-radius: 1.5rem; border: 1px solid var(--border-color); text-align: center; box-shadow: 0 15px 35px var(--shadow-medium);">
 
-      <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-        📧 Vous pouvez me contacter par email à :<br>
+      <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-secondary);">
+        Vous pouvez me contacter par email à :<br>
         <a href="mailto:vidueiramathis@gmail.com" class="contact-mail">vidueiramathis@gmail.com</a>
       </p>
 
       <a href="pdf/CV_Mathis_Vidueira.pdf" download type="application/pdf">
-        <button class="cv-button">📄 Télécharger mon CV</button>
+        <button class="cv-button"><span>Télécharger mon CV</span></button>
       </a>
     </div>
   </section>
@@ -561,12 +847,12 @@
     <p>&copy; 2025 Mathis Vidueira</p>
   </footer>
 
-  <button title="Revenir en haut de la page" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-    style="position: fixed; bottom: 2rem; right: 2rem; background-color: #06b6d4; color: white; border: none; padding: 0.75rem 1rem; border-radius: 9999px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; z-index: 1000;">
+  <button class="scroll-top" title="Revenir en haut de la page" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
     ↑
   </button>
 
   <script>
+    // Animation des cartes de projets
     const cards = document.querySelectorAll('.project-card');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -581,6 +867,22 @@
     cards.forEach(card => {
       observer.observe(card);
     });
+
+    // Animation du bouton retour en haut
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.style.opacity = '1';
+        scrollTopBtn.style.visibility = 'visible';
+      } else {
+        scrollTopBtn.style.opacity = '0';
+        scrollTopBtn.style.visibility = 'hidden';
+      }
+    });
+
+    // Initialisation
+    scrollTopBtn.style.opacity = '0';
+    scrollTopBtn.style.visibility = 'hidden';
   </script>
 
 </body>
