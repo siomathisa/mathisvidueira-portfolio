@@ -12,621 +12,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="manifest" href="favicon/site.webmanifest">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #111111;
-      --bg-card: #1a1a1a;
-      --bg-nav: rgba(10, 10, 10, 0.95);
-      --text-primary: #ffffff;
-      --text-secondary: #a0a0a0;
-      --text-muted: #666666;
-      --accent-primary: #8b5cf6;
-      --accent-secondary: #6366f1;
-      --accent-hover: #a855f7;
-      --border-color: #2a2a2a;
-      --shadow-light: rgba(139, 92, 246, 0.1);
-      --shadow-medium: rgba(0, 0, 0, 0.3);
-      --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
-      --gradient-secondary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    /* Scrollbar moderne */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg-secondary);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--gradient-primary);
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--gradient-secondary);
-    }
-
-    /* Firefox */
-    * {
-      scrollbar-width: thin;
-      scrollbar-color: var(--accent-primary) var(--bg-secondary);
-    }
-
-    /* Navigation moderne avec effet de flou */
-    nav {
-      background: var(--bg-nav);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-    }
-
-    nav h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-      padding: 0.5rem 0;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gradient-primary);
-      transition: width 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--text-primary);
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* Header avec animation moderne */
-    header {
-      text-align: center;
-      padding: 8rem 2rem 6rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-      z-index: -1;
-    }
-
-    header h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: fadeInUp 1.2s ease-out;
-    }
-
-    header p {
-      font-size: 1.5rem;
-      color: var(--text-secondary);
-      font-weight: 300;
-      animation: fadeInUp 1.2s ease-out 0.2s both;
-    }
-
-    /* Sections avec espacement moderne */
-    section {
-      scroll-margin-top: 100px;
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 3rem;
-      text-align: center;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      position: relative;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--gradient-primary);
-      border-radius: 2px;
-    }
-
-    /* Grille de projets moderne et professionnelle */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 1rem;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: fadeInUp 0.8s ease forwards;
-      opacity: 0;
-      position: relative;
-      overflow: hidden;
-      min-height: 500px;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--gradient-primary);
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--accent-primary);
-      box-shadow: 0 20px 40px var(--shadow-medium);
-    }
-
-    .project-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 0.75rem;
-      margin-bottom: 1.5rem;
-      transition: transform 0.4s ease;
-      border: 1px solid var(--border-color);
-    }
-
-    .project-card:hover img {
-      transform: scale(1.02);
-    }
-
-    .project-card h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-
-    .project-card p {
-      flex-grow: 1;
-      margin-bottom: 1.5rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      font-size: 0.95rem;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .project-card a {
-      display: inline-block;
-      font-weight: 500;
-      color: var(--accent-primary);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      padding: 0.5rem 0;
-      position: relative;
-      font-size: 0.9rem;
-    }
-
-    .project-card a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent-primary);
-      transition: width 0.3s ease;
-    }
-
-    .project-card a:hover {
-      color: var(--accent-hover);
-    }
-
-    .project-card a:hover::after {
-      width: 100%;
-    }
-
-    /* Grille de compétences moderne */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .skill-block {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 2rem;
-      border-radius: 1rem;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skill-block::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--gradient-primary);
-      transform: scaleX(0);
-      transition: transform 0.4s ease;
-    }
-
-    .skill-block:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent-primary);
-      box-shadow: 0 15px 30px var(--shadow-medium);
-    }
-
-    .skill-block:hover::before {
-      transform: scaleX(1);
-    }
-
-    .skill-block h3 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .skill-block ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .skill-block li {
-      margin-bottom: 0.75rem;
-      color: var(--text-secondary);
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-
-    .skill-block li:hover {
-      color: var(--text-primary);
-    }
-
-    /* Section contact moderne */
-    .contact-mail {
-      color: var(--accent-primary);
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .contact-mail::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent-primary);
-      transition: width 0.3s ease;
-    }
-
-    .contact-mail:hover {
-      color: var(--accent-hover);
-    }
-
-    .contact-mail:hover::after {
-      width: 100%;
-    }
-
-    .cv-button {
-      background: var(--gradient-primary);
-      color: var(--text-primary);
-      font-size: 1.1rem;
-      font-weight: 600;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 0.75rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cv-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient-secondary);
-      transition: left 0.3s ease;
-    }
-
-    .cv-button:hover::before {
-      left: 0;
-    }
-
-    .cv-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px var(--shadow-light);
-    }
-
-    .cv-button span {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Boutons génériques */
-    button {
-      background: var(--gradient-primary);
-      color: var(--text-primary);
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 0.75rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      margin-top: 1rem;
-    }
-
-    button:hover {
-      background: var(--gradient-secondary);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px var(--shadow-light);
-    }
-
-    /* Liste avec style moderne */
-    ul li {
-      margin-left: 1.5rem;
-      list-style-type: none;
-      margin-bottom: 0.75rem;
-      position: relative;
-      color: var(--text-secondary);
-    }
-
-    ul li::before {
-      content: '▸';
-      color: var(--accent-primary);
-      font-weight: bold;
-      position: absolute;
-      left: -1.5rem;
-    }
-
-    /* Footer moderne */
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: var(--bg-secondary);
-      color: var(--text-muted);
-      border-top: 1px solid var(--border-color);
-    }
-
-    /* Bouton retour en haut moderne */
-    .scroll-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--gradient-primary);
-      color: var(--text-primary);
-      border: none;
-      padding: 1rem;
-      border-radius: 50%;
-      box-shadow: 0 8px 25px var(--shadow-medium);
-      cursor: pointer;
-      z-index: 1000;
-      transition: all 0.3s ease;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
-
-    .scroll-top:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px var(--shadow-medium);
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Responsive design moderne */
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-        background: var(--bg-nav);
-        backdrop-filter: blur(20px);
-        position: absolute;
-        top: 100%;
-        right: 1rem;
-        padding: 1.5rem;
-        border-radius: 1rem;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 10px 30px var(--shadow-medium);
-        display: none;
-        min-width: 200px;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 1.5rem;
-        color: var(--accent-primary);
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      header p {
-        font-size: 1.2rem;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .project-card {
-        min-height: auto;
-      }
-
-      .project-card img {
-        height: 180px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      .project-card img {
-        height: 160px;
-      }
-
-      .cv-button,
-      button {
-        font-size: 1rem;
-        padding: 0.75rem 1.5rem;
-      }
-
-      .scroll-top {
-        width: 50px;
-        height: 50px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -650,85 +36,120 @@
     <h2>Mes Projets</h2>
     <div class="projects-grid">
 
-      <div class="project-card">
-        <img src="images/projets-gsb.png" alt="Logo GSB" loading="lazy">
-        <h3>Application GSB</h3>
-        <p>Développée dans le cadre de mon BTS SIO, cette application en <strong>C#</strong> avec base de données
-          <strong>SQL Server</strong> permet de gérer, afficher et modifier des données médicales de manière fluide et
-          sécurisée.
-        </p>
-        <div class="project-links">
-          <a href="https://github.com/siomathisa/btssio_gsb_1" target="_blank">Voir sur GitHub</a>
+      <div class="project-accordion">
+        <div class="project-header" onclick="toggleProject(this)">
+          <h3>Application GSB</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="project-content">
+          <img src="images/projets-gsb.png" alt="Logo GSB" loading="lazy">
+          <p>Développée dans le cadre de mon BTS SIO, cette application en <strong>C#</strong> avec base de données
+            <strong>SQL Server</strong> permet de gérer, afficher et modifier des données médicales de manière fluide et
+            sécurisée.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/btssio_gsb_1" target="_blank">Voir sur GitHub</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="images/projets-calculatrice.png" alt="Interface de la calculatrice" loading="lazy">
-        <h3>Calculatrice interactive</h3>
-        <p>Une calculatrice moderne développée en <strong>HTML/CSS et JavaScript</strong>, idéale pour effectuer des
-          opérations simples dans une interface claire et responsive.</p>
-        <div class="project-links">
-          <a href="https://github.com/siomathisa/calculatrice_js" target="_blank">Voir sur GitHub</a>
-          <a href="calculatrice-js/index.html" target="_blank">Tester</a>
+      <div class="project-accordion">
+        <div class="project-header" onclick="toggleProject(this)">
+          <h3>Calculatrice interactive</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="project-content">
+          <img src="images/projets-calculatrice.png" alt="Interface de la calculatrice" loading="lazy">
+          <p>Une calculatrice moderne développée en <strong>HTML/CSS et JavaScript</strong>, idéale pour effectuer des
+            opérations simples dans une interface claire et responsive.</p>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/calculatrice_js" target="_blank">Voir sur GitHub</a>
+            <a href="calculatrice-js/index.html" target="_blank">Tester</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="images/projets-generateur-mdp.png" alt="Interface du générateur de mots de passe" loading="lazy">
-        <h3>Générateur de mots de passe</h3>
-        <p>Un outil en <strong>Python</strong> pour générer rapidement des mots de passe personnalisés selon vos
-          critères
-          (longueur, types de caractères, quantité), avec possibilité d'enregistrement automatique dans un fichier
-          texte.
-        </p>
-        <div class="project-links">
-          <a href="https://github.com/siomathisa/Password_Generator" target="_blank">Voir sur GitHub</a>
+      <div class="project-accordion">
+        <div class="project-header" onclick="toggleProject(this)">
+          <h3>Générateur de mots de passe</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="project-content">
+          <img src="images/projets-generateur-mdp.png" alt="Interface du générateur de mots de passe" loading="lazy">
+          <p>Un outil en <strong>Python</strong> pour générer rapidement des mots de passe personnalisés selon vos
+            critères
+            (longueur, types de caractères, quantité), avec possibilité d'enregistrement automatique dans un fichier
+            texte.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/Password_Generator" target="_blank">Voir sur GitHub</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="images/projets-app-imc.png" alt="Echelle IMC" loading="lazy">
-        <h3>Application de calcul d'IMC</h3>
-        <p>Cette application en <strong>Winforms C#</strong> calcule automatiquement votre IMC à partir de votre taille
-          et
-          poids, et vous indique votre catégorie (normale, surpoids, etc.) via une échelle graphique intuitive.</p>
-        <div class="project-links">
-          <a href="https://github.com/siomathisa/IMC" target="_blank">Voir sur GitHub</a>
+      <div class="project-accordion">
+        <div class="project-header" onclick="toggleProject(this)">
+          <h3>Application de calcul d'IMC</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="project-content">
+          <img src="images/projets-app-imc.png" alt="Echelle IMC" loading="lazy">
+          <p>Cette application en <strong>Winforms C#</strong> calcule automatiquement votre IMC à partir de votre taille
+            et
+            poids, et vous indique votre catégorie (normale, surpoids, etc.) via une échelle graphique intuitive.</p>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/IMC" target="_blank">Voir sur GitHub</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="images/projets-devine-nombre.png" alt="Interface du jeu devine nombre" loading="lazy">
-        <h3>Devine le nombre</h3>
-        <p>Un mini-jeu en <strong>HTML/CSS et JavaScript</strong> où vous devez trouver un nombre entre 1 et 100. À
-          chaque
-          tentative, une indication vous guide pour affiner votre réponse. Simple, rapide et efficace pour s'entraîner
-          en
-          logique !</p>
-        <div class="project-links">
-          <a href="https://github.com/siomathisa/devine_nombre_js" target="_blank">Voir sur GitHub</a>
-          <a href="devinenombre-js/index.html" target="_blank">Tester</a>
+      <div class="project-accordion">
+        <div class="project-header" onclick="toggleProject(this)">
+          <h3>Devine le nombre</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="project-content">
+          <img src="images/projets-devine-nombre.png" alt="Interface du jeu devine nombre" loading="lazy">
+          <p>Un mini-jeu en <strong>HTML/CSS et JavaScript</strong> où vous devez trouver un nombre entre 1 et 100. À
+            chaque
+            tentative, une indication vous guide pour affiner votre réponse. Simple, rapide et efficace pour s'entraîner
+            en
+            logique !</p>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/devine_nombre_js" target="_blank">Voir sur GitHub</a>
+            <a href="devinenombre-js/index.html" target="_blank">Tester</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="images/projets-blender.png" alt="Modélisation 3D Blender" loading="lazy">
-        <h3>Modélisation 3D</h3>
-        <p>En autodidacte, j'ai commencé à explorer <strong>Blender</strong> pour apprendre les bases de la modélisation
-          3D. J'ai réalisé quelques petits modèles simples (objets, formes stylisées) afin de me familiariser avec les
-          outils de sculpture, de texturage et de rendu.</p>
-        <div class="project-links">
-          <a href="https://github.com/siomathisa/3D_Models_Blender" target="_blank">Voir sur GitHub</a>
+      <div class="project-accordion">
+        <div class="project-header" onclick="toggleProject(this)">
+          <h3>Modélisation 3D</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="project-content">
+          <img src="images/projets-blender.png" alt="Modélisation 3D Blender" loading="lazy">
+          <p>En autodidacte, j'ai commencé à explorer <strong>Blender</strong> pour apprendre les bases de la modélisation
+            3D. J'ai réalisé quelques petits modèles simples (objets, formes stylisées) afin de me familiariser avec les
+            outils de sculpture, de texturage et de rendu.</p>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/3D_Models_Blender" target="_blank">Voir sur GitHub</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card">
-        <img src="" alt="" loading="lazy">
-        <h3>Projet en cours</h3>
-        <p>Un nouveau projet en HTML, Tailwind CSS et Javascript.</p>
-        <div class="project-links">
-          <a href="" target="_blank">Voir sur GitHub</a>
-          <a href="" target="_blank">Tester</a>
+      <div class="project-accordion">
+        <div class="project-header" onclick="toggleProject(this)">
+          <h3>Projet en cours</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="project-content">
+          <img src="" alt="" loading="lazy">
+          <p>Un nouveau projet en HTML, Tailwind CSS et Javascript.</p>
+          <div class="project-links">
+            <a href="" target="_blank">Voir sur GitHub</a>
+            <a href="" target="_blank">Tester</a>
+          </div>
         </div>
       </div>
 
@@ -864,39 +285,7 @@
     ↑
   </button>
 
-  <script>
-    // Animation des cartes de projets
-    const cards = document.querySelectorAll('.project-card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = 1;
-          entry.target.style.transform = "translateY(0)";
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    cards.forEach(card => {
-      observer.observe(card);
-    });
-
-    // Animation du bouton retour en haut
-    const scrollTopBtn = document.querySelector('.scroll-top');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        scrollTopBtn.style.opacity = '1';
-        scrollTopBtn.style.visibility = 'visible';
-      } else {
-        scrollTopBtn.style.opacity = '0';
-        scrollTopBtn.style.visibility = 'hidden';
-      }
-    });
-
-    // Initialisation
-    scrollTopBtn.style.opacity = '0';
-    scrollTopBtn.style.visibility = 'hidden';
-  </script>
+  <script src="script.js"></script>
 
 </body>
 
