@@ -42,13 +42,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-secondary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--gradient-primary);
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gradient-secondary);
 }
@@ -107,6 +110,7 @@ nav a::after {
 nav a:hover {
   color: var(--text-primary);
 }
+
 nav a:hover::after {
   width: 100%;
 }
@@ -126,11 +130,9 @@ header::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(139, 92, 246, 0.1) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at 50% 50%,
+      rgba(139, 92, 246, 0.1) 0%,
+      transparent 70%);
   z-index: -1;
 }
 
@@ -197,6 +199,7 @@ h2::after {
 .projects-grid {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
+
 .skills-grid {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
@@ -390,6 +393,7 @@ h2::after {
 .contact-mail:hover {
   color: var(--accent-hover);
 }
+
 .contact-mail:hover::after {
   width: 100%;
 }
@@ -412,6 +416,7 @@ button {
 .cv-button {
   font-size: 1.1rem;
 }
+
 button {
   padding: 0.75rem 1.5rem;
   margin-top: 1rem;
@@ -454,6 +459,11 @@ ul li {
   margin-bottom: 0.75rem;
   position: relative;
   color: var(--text-secondary);
+}
+
+ul li:hover {
+  color: var(--text-primary);
+  transition: 0.8s;
 }
 
 ul li::before {
@@ -506,6 +516,7 @@ footer {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -580,9 +591,11 @@ footer {
   header h1 {
     font-size: 2.5rem;
   }
+
   header p {
     font-size: 1.2rem;
   }
+
   h2 {
     font-size: 2rem;
   }
@@ -591,6 +604,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
   .project-content img {
     height: 180px;
   }
@@ -600,12 +614,15 @@ footer {
   header h1 {
     font-size: 2rem;
   }
+
   header p {
     font-size: 1rem;
   }
+
   h2 {
     font-size: 1.8rem;
   }
+
   .project-content img {
     height: 160px;
   }
