@@ -134,6 +134,9 @@ nav ul li a:hover::after {
 }
 
 .btn-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding: 8px 20px;
     background: transparent;
     border: 1px solid var(--border);
@@ -148,6 +151,15 @@ nav ul li a:hover::after {
     border-color: var(--accent);
     color: var(--accent);
     transform: translateY(-2px);
+}
+
+.btn-nav svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.btn-nav:hover svg {
+    transform: scale(1.1);
 }
 
 /* Titres header */
@@ -622,7 +634,7 @@ footer {
 }
 
 footer p {
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 /* Animations */
