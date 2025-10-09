@@ -27,6 +27,12 @@ body {
     overflow-x: hidden;
 }
 
+.important {
+    color: #fffd9d;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 .skip-to-main {
     position: absolute;
     top: -100px;
