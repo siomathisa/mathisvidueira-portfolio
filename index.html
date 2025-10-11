@@ -123,7 +123,7 @@
           <ul class="technos">
             <li>ReactJS</li>
             <li>TypeScript</li>
-            <li>TailwindCSS (Daisy UI)</li>
+            <li>Daisy UI</li>
           </ul>
           <div class="project-links">
             <a href="https://github.com/siomathisa/todolist_reactjs" target="_blank" rel="noopener noreferrer"
@@ -186,10 +186,8 @@
           </div>
         </article>
       </div>
-      <div class="voir-plus">
-        <a aria-label="Voir tous mes projets">Voir plus de projets</a>
-      </div>
     </section>
+    
     <section id="competences">
       <h2>Compétences</h2>
       <div class="competences-container">
@@ -211,6 +209,7 @@
             <span class="skill-tag">SQL</span>
             <span class="skill-tag">C#</span>
             <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
           </div>
         </div>
 
@@ -221,15 +220,34 @@
               <rect x="2" y="6" width="20" height="12" rx="2"></rect>
               <path d="M12 12h.01"></path>
             </svg>
-            <h3>Frameworks & Outils</h3>
+            <h3>Frameworks</h3>
           </div>
           <div class="skills-grid">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">React</span>
+            <span class="skill-tag">NodeJS</span>
+            <span class="skill-tag">ReactJS</span>
             <span class="skill-tag">Laravel</span>
             <span class="skill-tag">Bootstrap</span>
-            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">TailwindCSS</span>
             <span class="skill-tag">DaisyUI</span>
+          </div>
+        </div>
+
+        <div class="competences-category">
+          <div class="category-header">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <h3>Design & Création</h3>
+          </div>
+          <div class="skills-grid">
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">CapCut</span>
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Communication visuelle</span>
+            <span class="skill-tag">Montage vidéo</span>
           </div>
         </div>
 
@@ -247,7 +265,7 @@
             <span class="skill-tag">Travail d'équipe</span>
             <span class="skill-tag">Autonomie</span>
             <span class="skill-tag">Rigourosité</span>
-            <span class="skill-tag">Communication</span>
+            <span class="skill-tag">Créativité</span>
             <span class="skill-tag">Curiosité</span>
           </div>
         </div>
@@ -268,7 +286,7 @@
           </li>
           <li>
             <strong>2023 - Responsable du service informatique (stage 1
-              mois)</strong>chez
+              mois)</strong> chez
             <a href="https://www.ilot.asso.fr/" target="_blank" rel="noopener noreferrer">
               Maison d'accueil l'îlot</a>
             <br />
@@ -321,52 +339,8 @@
     <section id="centres-interet">
       <h2>Quand je ne code pas...</h2>
 
-      <!-- Vue classique -->
-      <div class="interests-classic">
-        <div class="interests-grid">
-          <div class="interest-card-simple">
-            <span class="interest-icon">🎾</span>
-            <h3>Tennis</h3>
-            <p>Compétition en club</p>
-          </div>
-          <div class="interest-card-simple">
-            <span class="interest-icon">⚽</span>
-            <h3>Football</h3>
-            <p>Passionné du jeu</p>
-          </div>
-          <div class="interest-card-simple">
-            <span class="interest-icon">🎮</span>
-            <h3>Gaming</h3>
-            <p>Joueur & spectateur</p>
-          </div>
-          <div class="interest-card-simple">
-            <span class="interest-icon">🎨</span>
-            <h3>Création digitale</h3>
-            <p>Design & montage</p>
-          </div>
-        </div>
-
-        <button class="btn-enter-universe">
-          <span>✨ Rentrer dans mon univers</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Vue immersive -->
-      <div class="interests-immersive hidden">
-        <button class="btn-back">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-          </svg>
-          Retour
-        </button>
-
-        <div class="interests-immersive-grid">
-          <!-- Tennis -->
+      <div class="interests-container">
+        <div class="interests-grid-full">
           <div class="interest-card-full">
             <div class="card-header">
               <span class="interest-icon-large">🎾</span>
@@ -380,7 +354,7 @@
               <div class="info-item">
                 <strong>Tournois :</strong> 2 à 5 par an
               </div>
-              
+
               <p class="passion-text">
                 Ce que j'aime dans le tennis, c'est la combativité que ça
                 demande. Comme Nadal, je n'abandonne jamais un point. C'est un
@@ -390,7 +364,6 @@
             </div>
           </div>
 
-          <!-- Football -->
           <div class="interest-card-full">
             <div class="card-header">
               <span class="interest-icon-large">⚽</span>
@@ -415,7 +388,6 @@
             </div>
           </div>
 
-          <!-- Gaming -->
           <div class="interest-card-full">
             <div class="card-header">
               <span class="interest-icon-large">🎮</span>
@@ -435,42 +407,6 @@
                 regarde beaucoup de streamers et j'aime bien voir des gens
                 créer du contenu autour de leur passion.
               </p>
-            </div>
-          </div>
-
-          <!-- Création digitale -->
-          <div class="interest-card-full creation-digitale-card">
-            <div class="card-header">
-              <span class="interest-icon-large">🎨</span>
-              <h3>Création digitale</h3>
-            </div>
-            <div class="card-content">
-              <div class="tools">
-                <span class="tool-badge">Canva</span>
-                <span class="tool-badge">CapCut</span>
-              </div>
-              <p class="passion-text">
-                Je maîtrise <strong>Canva</strong> pour créer des visuels impactants : posts Instagram, mockups de projets, articles... 
-                J'utilise aussi <strong>CapCut</strong> de temps en temps pour monter des vidéos courtes et dynamiques.
-              </p>
-              
-              <div class="creations-showcase">
-                <h4>Quelques créations</h4>
-                <div class="creations-grid">
-                  <div class="creation-item">
-                    <img src="images/Post_SmileToday(2).png" alt="Description" class="creation-image square">
-                  </div>
-                  <div class="creation-item">
-                    <img src="images/Mockup_Portfolio(2).png" alt="Description" class="creation-image rectangle">
-                  </div>
-                  <div class="creation-item">
-                    <img src="images/Article_Journal.png" alt="Description" class="creation-image a4">
-                  </div>
-                </div>
-                <p class="creation-note">
-                  💡 <em>Ces créations illustrent ma capacité à concevoir des supports visuels variés et professionnels.</em>
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -528,20 +464,26 @@
       voirPlusContainer.classList.add("hidden");
     });
 
-    // Gestion de la section Centres d'intérêt
-    const btnEnterUniverse = document.querySelector(".btn-enter-universe");
-    const btnBack = document.querySelector(".btn-back");
-    const classicView = document.querySelector(".interests-classic");
-    const immersiveView = document.querySelector(".interests-immersive");
+    // Animation au scroll pour les cartes d'intérêt
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
 
-    btnEnterUniverse.addEventListener("click", () => {
-      classicView.classList.add("hidden");
-      immersiveView.classList.remove("hidden");
-    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
 
-    btnBack.addEventListener("click", () => {
-      immersiveView.classList.add("hidden");
-      classicView.classList.remove("hidden");
+    document.querySelectorAll('.interest-card-full').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
     });
   </script>
 </body>
