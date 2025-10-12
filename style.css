@@ -352,6 +352,19 @@ section h2::after{
     color:var(--accent);
 }
 
+.project-links .btn-demo{
+    background:var(--accent);
+    color:var(--bg-dark);
+    border-color:var(--accent);
+    font-weight:600;
+}
+
+.project-links .btn-demo:hover{
+    background:var(--accent-hover);
+    transform:translateY(-2px);
+    box-shadow:0 5px 20px rgba(0,217,255,.3);
+}
+
 /* ========================================
    COMPÉTENCES
    ======================================== */
@@ -434,6 +447,124 @@ section h2::after{
 }
 
 /* ========================================
+   ALTERNANCE
+   ======================================== */
+.alternance-container{
+    max-width:900px;
+    margin:0 auto;
+}
+
+.alternance-intro{
+    text-align:center;
+    margin-bottom:var(--spacing-lg);
+    padding:var(--spacing-md);
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:var(--border-radius);
+}
+
+.alternance-intro p{
+    font-size:1.1rem;
+    line-height:1.8;
+    color:var(--text-secondary);
+}
+
+.alternance-intro strong{
+    color:var(--accent);
+}
+
+.alternance-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:var(--spacing-md);
+    margin-bottom:var(--spacing-lg);
+}
+
+.alternance-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:var(--border-radius);
+    padding:var(--spacing-md);
+    transition:all .4s ease;
+}
+
+.alternance-card:hover{
+    border-color:var(--accent);
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,217,255,.15);
+}
+
+.alternance-icon{
+    font-size:2.5rem;
+    margin-bottom:var(--spacing-sm);
+}
+
+.alternance-card h3{
+    color:var(--text-primary);
+    font-size:1.3rem;
+    margin-bottom:var(--spacing-sm);
+}
+
+.alternance-card p{
+    color:var(--text-secondary);
+    margin-bottom:10px;
+}
+
+.alternance-card strong{
+    color:var(--accent);
+}
+
+.alternance-card .rythme{
+    color:var(--text-primary);
+    font-size:.95rem;
+    padding:var(--spacing-xs);
+    background:rgba(0,217,255,.1);
+    border-radius:5px;
+    display:inline-block;
+}
+
+.alternance-card .localisation-detail{
+    font-size:.9rem;
+    font-style:italic;
+}
+
+.alternance-card ul{
+    list-style:none;
+    padding:0;
+}
+
+.alternance-card ul li{
+    color:var(--text-secondary);
+    padding:var(--spacing-xs) 0;
+    padding-left:20px;
+    position:relative;
+}
+
+.alternance-card ul li::before{
+    content:'✓';
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-weight:700;
+}
+
+.alternance-cta{
+    text-align:center;
+    padding:var(--spacing-lg);
+    background:var(--bg-card);
+    border:2px solid var(--accent);
+    border-radius:var(--border-radius);
+    margin-top:var(--spacing-lg);
+}
+
+.alternance-cta p{
+    font-size:1.2rem;
+    color:var(--text-primary);
+    margin-bottom:var(--spacing-md);
+    font-weight:600;
+}
+
+/* ========================================
    À PROPOS
    ======================================== */
 .parcours{max-width:800px;margin:0 auto}
@@ -474,55 +605,6 @@ section h2::after{
 }
 
 .parcours li a:hover{color:var(--accent-hover)}
-
-/* ========================================
-   FAQ
-   ======================================== */
-.faq-item{
-    background:var(--bg-card);
-    border:1px solid var(--border);
-    border-radius:10px;
-    margin-bottom:20px;
-    overflow:hidden;
-    transition:var(--transition);
-}
-
-.faq-item:hover{border-color:var(--accent)}
-
-.faq-item h3{
-    color:var(--text-primary);
-    padding:20px;
-    margin:0;
-    cursor:pointer;
-    position:relative;
-    transition:var(--transition);
-}
-
-.faq-item h3::after{
-    content:'+';
-    position:absolute;
-    right:20px;
-    top:50%;
-    transform:translateY(-50%);
-    font-size:1.5rem;
-    color:var(--accent);
-    transition:var(--transition);
-}
-
-.faq-item.active h3::after{transform:translateY(-50%) rotate(45deg)}
-
-.faq-item p{
-    padding:0 20px 20px;
-    max-height:0;
-    overflow:hidden;
-    transition:all .4s ease;
-    opacity:0;
-}
-
-.faq-item.active p{
-    max-height:500px;
-    opacity:1;
-}
 
 /* ========================================
    CONTACT
@@ -650,7 +732,7 @@ footer p{margin:0}
     header h1{font-size:2.5rem}
     .profile-photo{width:120px;height:120px}
     section h2{font-size:2rem}
-    .projets-list,.interests-grid-full{grid-template-columns:1fr}
+    .projets-list,.interests-grid-full,.alternance-grid{grid-template-columns:1fr}
     .interests-container{padding:var(--spacing-md) var(--spacing-sm)}
     .scroll-to-top{bottom:20px;right:20px}
 }
