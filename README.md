@@ -10,7 +10,7 @@ Site vitrine minimaliste avec design sombre moderne, optimisé pour le SEO et le
 
 ## ✨ Fonctionnalités
 
-- 🎨 Design moderne avec thème sombre
+- 🎨 Design minimaliste
 - 📱 Entièrement responsive
 - ⚡ Performances optimisées
 - ♿ Accessible (WCAG)
@@ -43,3 +43,7 @@ Site vitrine minimaliste avec design sombre moderne, optimisé pour le SEO et le
 ---
 
 💡 *Actuellement en recherche d'alternance pour un Bachelor 3 Développement Web*
+
+## 🥚 Easter Egg
+
+↑ ↑ ↓ ↓ ← → ← →
