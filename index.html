@@ -1,528 +1,481 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mathis Vidueira - Développeur Web Junior | Portfolio</title>
-  <meta name="description"
-    content="Portfolio de Mathis Vidueira, développeur web junior. Découvrez ses projets, compétences, parcours et contactez-le." />
-  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon" />
-  <!-- Open Graph pour les réseaux sociaux -->
-  <meta property="og:title" content="Mathis Vidueira - Développeur Web Junior" />
-  <meta property="og:description"
-    content="Portfolio de Mathis Vidueira, développeur web junior passionné par la création de sites modernes et performants." />
-  <meta property="og:image" content="https://mathisvidueira.github.io/images/og-image.jpg" />
-  <meta property="og:url" content="https://mathisvidueira.github.io" />
-  <meta property="og:type" content="website" />
+  <meta name="description" content="Portfolio de Mathis Vidueira, développeur web junior. Découvrez ses projets, compétences, parcours et contactez-le.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  
+  <!-- Open Graph pour partage sur réseaux sociaux -->
+  <meta property="og:title" content="Mathis Vidueira - Développeur Web Junior">
+  <meta property="og:description" content="Portfolio de Mathis Vidueira, développeur web junior passionné par la création de sites modernes et performants.">
+  <meta property="og:image" content="https://mathisvidueira.github.io/images/og-image.jpg">
+  <meta property="og:url" content="https://mathisvidueira.github.io">
+  <meta property="og:type" content="website">
+  
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mathis Vidueira - Développeur Web Junior" />
-  <meta name="twitter:description" content="Portfolio de Mathis Vidueira, développeur web junior." />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mathis Vidueira - Développeur Web Junior">
+  <meta name="twitter:description" content="Portfolio de Mathis Vidueira, développeur web junior.">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- Loader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
 
-  <body>
-    <!-- Preloader -->
-    <div class="preloader">
-      <div class="loader"></div>
-    </div>
+  <!-- Barre de progression au scroll -->
+  <div class="scroll-progress" id="scroll-progress"></div>
 
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scroll-progress"></div>
+  <!-- Easter egg -->
+  <div class="matrix-message" id="matrix-message">
+    🎮 KONAMI CODE ACTIVATED! 🎮<br>
+    <small>Press ESC to exit</small>
+  </div>
 
-    <!-- Matrix Easter Egg Message -->
-    <div class="matrix-message" id="matrix-message">
-      🎮 KONAMI CODE ACTIVATED! 🎮<br>
-      <small>Press ESC to exit</small>
-    </div>
+  <!-- Bouton switch thème clair/sombre -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
+    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
 
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
-      <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-      </svg>
-      <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
-    </button>
+  <!-- Lien d'accessibilité pour passer au contenu -->
+  <a href="#main-content" class="skip-to-main">Aller au contenu principal</a>
 
-    <!-- Lien d'accès rapide pour l'accessibilité -->
-    <a href="#main-content" class="skip-to-main">Aller au contenu principal</a>
+  <header>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#alternance">Alternance</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <div class="nav-buttons">
+        <a href="https://github.com/siomathisa" target="_blank" class="btn-nav" rel="noopener noreferrer" aria-label="Voir mon profil GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mathis-vidueira/" target="_blank" class="btn-nav" rel="noopener noreferrer" aria-label="Voir mon profil LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </nav>
 
-    <header>
-      <nav aria-label="Navigation principale">
+    <img src="images/moi.jpg" alt="Photo de profil de Mathis Vidueira" class="profile-photo" width="150" height="150">
+
+    <h1>Mathis Vidueira</h1>
+    <p>
+      Développeur Web Junior | Étudiant en Bachelor 3 Développement Web chez
+      <a href="https://ecole-decode.fr/" target="_blank" rel="noopener noreferrer">Decode.</a>
+    </p>
+    <p class="important">
+      ⚠️ Je suis à la recherche d'une entreprise pour un contrat d'apprentissage en alternance dans le digital, disponible immédiatement.
+    </p>
+    <a href="pdf/CV.pdf" class="btn-cv" download="CV-Mathis-Vidueira.pdf" aria-label="Télécharger mon CV en PDF">Télécharger mon CV</a>
+  </header>
+
+  <main id="main-content">
+    <!-- Projets -->
+    <section id="projets">
+      <h2>Projets</h2>
+      <div class="projets-list">
+        <article>
+          <img src="images/gsbapp.png" alt="Logo GSB" loading="lazy" width="300" height="200">
+          <h3>GSB App</h3>
+          <p>
+            Application web de gestion médicale permettant aux visiteurs médicaux de consulter et gérer leurs rapports de visite.
+            Système complet avec <strong>authentification sécurisée</strong> et interface intuitive pour le suivi des données professionnelles.
+          </p>
+          <ul class="technos">
+            <li>PHP</li>
+            <li>SQL</li>
+            <li>MVC</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/btssio_gsb_1_mvc_php" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+          </div>
+        </article>
+
+        <article>
+          <img src="images/ecommerce-app.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200">
+          <h3>E-Commerce App</h3>
+          <p>
+            Site e-commerce <strong>Laravel</strong> : Application complète avec authentification, gestion de produits, panier,
+            commandes et espace administrateur
+          </p>
+          <ul class="technos">
+            <li>Laravel</li>
+            <li>MySQL</li>
+            <li>TailwindCSS</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/ecommerce-laravel" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+          </div>
+        </article>
+
+        <article>
+          <img src="images/portfolio.png" alt="Capture d'écran de mon portfolio" loading="lazy" width="300" height="200">
+          <h3>Portfolio Personnel</h3>
+          <p>
+            Site vitrine moderne présentant mes projets et compétences. Design <strong>responsive</strong> adapté à tous les écrans,
+            optimisé pour le <strong>référencement SEO</strong> et les performances, avec animations fluides et interface soignée.
+          </p>
+          <ul class="technos">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/mathisvidueira-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+          </div>
+        </article>
+
+        <article>
+          <img src="images/todolist.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200">
+          <h3>Todo List Interactive</h3>
+          <p>
+            Todo List classique avec <strong>trois niveaux de priorité</strong> (urgente, moyenne, basse).
+            Sauvegarde automatique des données pour ne jamais perdre votre travail. Interface intuitive développée avec <strong>React</strong>.
+          </p>
+          <ul class="technos">
+            <li>ReactJS</li>
+            <li>TypeScript</li>
+            <li>Daisy UI</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/todolist_reactjs" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+            <a href="https://todolistreactjs-mv.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Tester le projet" class="btn-demo">Tester</a>
+          </div>
+        </article>
+
+        <article>
+          <img src="images/calculatrice.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200">
+          <h3>Calculatrice Interactive</h3>
+          <p>
+            Calculatrice web fonctionnelle qui gère toutes les opérations de base avec une interface <strong>responsive</strong> et agréable,
+            utilisable au clavier ou à la souris.
+          </p>
+          <ul class="technos">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/calculatrice_js" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+            <a href="https://calculatrice-js-nine.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Tester le projet" class="btn-demo">Tester</a>
+          </div>
+        </article>
+
+        <article>
+          <img src="images/imcapp.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200">
+          <h3>Calculateur d'IMC</h3>
+          <p>
+            Application desktop qui calcule votre <strong>Indice de Masse Corporelle</strong>
+            que vous pouvez comparer avec le graphique coloré inclus. Interface simple et efficace.
+          </p>
+          <ul class="technos">
+            <li>C#</li>
+            <li>Winforms</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/siomathisa/app_imc_csharp" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences">
+      <h2>Compétences</h2>
+      <div class="competences-container">
+        <div class="competences-category">
+          <div class="category-header">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            <h3>Développement</h3>
+          </div>
+          <div class="skills-grid">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
+          </div>
+        </div>
+
+        <div class="competences-category">
+          <div class="category-header">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+              <path d="M12 12h.01"></path>
+            </svg>
+            <h3>Frameworks & Librairies</h3>
+          </div>
+          <div class="skills-grid">
+            <span class="skill-tag">NodeJS</span>
+            <span class="skill-tag">ReactJS</span>
+            <span class="skill-tag">Laravel</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">TailwindCSS</span>
+            <span class="skill-tag">DaisyUI</span>
+          </div>
+        </div>
+
+        <div class="competences-category">
+          <div class="category-header">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            <h3>Outils & Productivité</h3>
+          </div>
+          <div class="skills-grid">
+            <span class="skill-tag">IA Génératives</span>
+            <span class="skill-tag">Microsoft 365</span>
+            <span class="skill-tag">Google Workspace</span>
+            <span class="skill-tag">LibreOffice</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">VS Code</span>
+          </div>
+        </div>
+
+        <div class="competences-category">
+          <div class="category-header">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <h3>Design & Création</h3>
+          </div>
+          <div class="skills-grid">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">UI/UX Design</span>
+            <span class="skill-tag">Montage vidéo & photo</span>
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">CapCut</span>
+          </div>
+        </div>
+
+        <div class="competences-category">
+          <div class="category-header">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <h3>Soft Skills</h3>
+          </div>
+          <div class="skills-grid">
+            <span class="skill-tag">Travail d'équipe</span>
+            <span class="skill-tag">Autonomie</span>
+            <span class="skill-tag">Rigurosité</span>
+            <span class="skill-tag">Créativité</span>
+            <span class="skill-tag">Curiosité</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alternance -->
+    <section id="alternance">
+      <h2>Ce que je recherche</h2>
+      <div class="alternance-container">
+        <div class="alternance-intro">
+          <p>
+            Je recherche une <strong>alternance d'un an</strong> pour valider mon Bachelor 3 en Développement Web.
+            Passionné par le digital et motivé par les nouveaux défis, je souhaite mettre mes compétences au service
+            d'une équipe dynamique tout en continuant à apprendre.
+          </p>
+        </div>
+
+        <div class="alternance-grid">
+          <div class="alternance-card">
+            <div class="alternance-icon">📅</div>
+            <h3>Durée & Rythme</h3>
+            <p><strong>1 an</strong> à partir de maintenant</p>
+            <p class="rythme">1 semaine école / 3 semaines entreprise</p>
+            
+            <div class="alternance-icon">📍</div>
+            <h3>Localisation</h3>
+            <p><strong>Paris et proche banlieue</strong></p>
+            <p class="localisation-detail">Accessible en transports en commun depuis Sevran (93)</p>
+          </div>
+
+          <div class="alternance-card">
+            <div class="alternance-icon">💼</div>
+            <h3>Missions souhaitées</h3>
+            <ul>
+              <li>Développement web (front-end, back-end, full-stack)</li>
+              <li>Intégration web & création d'interfaces</li>
+              <li>Projets digitaux & communication</li>
+              <li>Maintenance & évolutions de sites</li>
+            </ul>
+          </div>
+
+          <div class="alternance-card">
+            <div class="alternance-icon">🎯</div>
+            <h3>Type d'entreprise</h3>
+            <ul>
+              <li>Agence digitale ou web</li>
+              <li>Startup innovante</li>
+              <li>ESN / Entreprise de services</li>
+              <li>Service digital d'une entreprise</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="alternance-cta">
+          <p>Votre entreprise correspond à ce profil ? Discutons-en !</p>
+          <a href="#contact" class="btn-contact">Me contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="a-propos">
+      <h2>À propos</h2>
+      <div class="parcours">
+        <h3>Parcours Professionnel</h3>
         <ul>
-          <li><a href="#projets">Projets</a></li>
-          <li><a href="#competences">Compétences</a></li>
-          <li><a href="#alternance">Alternance</a></li>
-          <li><a href="#a-propos">À propos</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <strong>2024 - Développeur Web (stage 2 mois)</strong> chez
+            <a href="https://share.google/seSLNIs3xXia0CaO8" target="_blank" rel="noopener noreferrer">Restaurant La Convivialité</a>
+            <br>
+            Refonte du site vitrine et maintenance front-end (Webador)
+          </li>
+          <li>
+            <strong>2023 - Responsable du service informatique (stage 1 mois)</strong> chez
+            <a href="https://www.ilot.asso.fr/" target="_blank" rel="noopener noreferrer">Maison d'accueil l'îlot</a>
+            <br>
+            Déploiement de postes et inventaire du parc informatique
+          </li>
         </ul>
-        <div class="nav-buttons">
-          <a href="https://github.com/siomathisa" target="_blank" class="btn-nav" rel="noopener noreferrer"
-            aria-label="Voir mon profil GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-            </svg>
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/mathis-vidueira/" target="_blank" class="btn-nav"
-            rel="noopener noreferrer" aria-label="Voir mon profil LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-            </svg>
-            LinkedIn
-          </a>
+        
+        <h3>Parcours Scolaire</h3>
+        <ul>
+          <li>
+            <strong>2025 - Bachelor 3 Développement Web</strong> Decode, Paris (en cours)
+          </li>
+          <li>
+            <strong>2022-2024 - BTS SIO SLAM</strong> Lycée Voillaume, Aulnay-sous-Bois
+          </li>
+          <li>
+            <strong>2019-2022 - Bac Général Mathématiques et Physique-Chimie (Mention Bien)</strong>
+            Lycée André Boulloche, Livry-Gargan
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Centres d'intérêt -->
+    <section id="centres-interet">
+      <h2>Quand je ne code pas...</h2>
+
+      <div class="interests-container">
+        <div class="interests-grid-full">
+          <div class="interest-card-full">
+            <div class="card-header">
+              <span class="interest-icon-large">🎾</span>
+              <h3>Tennis</h3>
+            </div>
+            <div class="card-content">
+              <div class="info-item"><strong>Classement :</strong> 15/5</div>
+              <div class="info-item"><strong>Joueur préféré :</strong> Rafael Nadal</div>
+              <div class="info-item"><strong>Tournois :</strong> 2 à 5 par an</div>
+
+              <p class="passion-text">
+                Ce que j'aime dans le tennis, c'est la combativité que ça demande. Comme Nadal, je n'abandonne jamais un point. C'est un
+                sport individuel où on se surpasse constamment, et l'ambiance dans les clubs est géniale !
+              </p>
+            </div>
+          </div>
+
+          <div class="interest-card-full">
+            <div class="card-header">
+              <span class="interest-icon-large">⚽</span>
+              <h3>Football</h3>
+            </div>
+            <div class="card-content">
+              <div class="info-item"><strong>Équipe :</strong> FC Barcelone / Espagne</div>
+              <div class="info-item"><strong>Joueur préféré :</strong> Lionel Messi</div>
+              <div class="info-item"><strong>Poste :</strong> Milieu défensif/central</div>
+              
+              <p class="passion-text">
+                Je joue toutes les semaines avec mes amis. J'adore Messi pour son humilité et ses dribbles simples mais efficaces à 100%.
+                Ce que je préfère ? Défendre et envoyer des caviars depuis le milieu de terrain.
+              </p>
+            </div>
+          </div>
+
+          <div class="interest-card-full">
+            <div class="card-header">
+              <span class="interest-icon-large">🎮</span>
+              <h3>Gaming</h3>
+            </div>
+            <div class="card-content">
+              <div class="info-item"><strong>Jeux favoris :</strong> FIFA, Fortnite, Rocket League, Minecraft</div>
+              <div class="info-item"><strong>Plateformes :</strong> YouTube, Twitch</div>
+              
+              <p class="passion-text">
+                Je joue depuis tout petit. Minecraft pour la créativité, FIFA pour le foot, Rocket League et Fortnite pour la compétition. Le gaming
+                c'est de l'amusement avec mes amis et de la compétition. Je regarde beaucoup de streamers et j'aime bien voir des gens
+                créer du contenu autour de leur passion.
+              </p>
+            </div>
+          </div>
         </div>
-      </nav>
+      </div>
+    </section>
 
-      <img src="images/moi.jpg" alt="Photo de profil de Mathis Vidueira" class="profile-photo" width="150"
-        height="150" />
-
-      <h1>Mathis Vidueira</h1>
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
       <p>
-        Développeur Web Junior | Étudiant en Bachelor 3 Développement Web chez
-        <a href="https://ecole-decode.fr/" target="_blank" rel="noopener noreferrer">Decode.</a>
+        Un projet en tête ? Une question ? N'hésitez pas à me contacter, je serais ravi d'échanger avec vous !
       </p>
-      <p class="important">
-        ⚠️ Je suis à la recherche d'une entreprise pour un contrat
-        d'apprentissage en alternance dans le digital, disponible immédiatement.
-      </p>
-      <a href="pdf/CV.pdf" class="btn-cv" download="CV-Mathis-Vidueira.pdf"
-        aria-label="Télécharger mon CV en PDF">Télécharger mon CV</a>
-    </header>
-    <main id="main-content">
-      <section id="projets">
-        <h2>Projets</h2>
-        <div class="projets-list">
-          <article>
-            <img src="images/gsbapp.png" alt="Logo GSB" loading="lazy" width="300" height="200" />
-            <h3>GSB App</h3>
-            <p>
-              Application web de gestion médicale permettant aux visiteurs médicaux de consulter et gérer leurs rapports
-              de visite.
-              Système complet avec <strong>authentification sécurisée</strong> et interface intuitive pour le suivi des
-              données professionnelles.
-            </p>
-            <ul class="technos">
-              <li>PHP</li>
-              <li>SQL</li>
-              <li>MVC</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/siomathisa/btssio_gsb_1_mvc_php" target="_blank" rel="noopener noreferrer"
-                aria-label="Voir le code source du projet sur GitHub">Code source</a>
-            </div>
-          </article>
-          <article>
-            <img src="images/ecommerce-app.png" alt="Capture d'écran du projet" loading="lazy" width="300"
-              height="200" />
-            <h3>E-Commerce App</h3>
-            <p>
-              Site e-commerce <strong>Laravel</strong> : Application complète avec authentification, gestion de
-              produits, panier,
-              commandes et espace administrateur
-            </p>
-            <ul class="technos">
-              <li>Laravel</li>
-              <li>MySQL</li>
-              <li>TailwindCSS</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/siomathisa/ecommerce-laravel" target="_blank" rel="noopener noreferrer"
-                aria-label="Voir le code source du projet sur GitHub">Code source</a>
-            </div>
-          </article>
-          <article>
-            <img src="images/portfolio.png" alt="Capture d'écran de mon portfolio" loading="lazy" width="300"
-              height="200" />
-            <h3>Portfolio Personnel</h3>
-            <p>
-              Site vitrine moderne présentant mes projets et compétences. Design <strong>responsive</strong> adapté à
-              tous
-              les écrans,
-              optimisé pour le <strong>référencement SEO</strong> et les performances, avec animations fluides et
-              interface soignée.
-            </p>
-            <ul class="technos">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JS</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/siomathisa/mathisvidueira-portfolio" target="_blank" rel="noopener noreferrer"
-                aria-label="Voir le code source du projet sur GitHub">Code source</a>
-            </div>
-          </article>
-          <article>
-            <img src="images/todolist.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200" />
-            <h3>Todo List Interactive</h3>
-            <p>
-              Todo List classique avec <strong>trois niveaux de priorité</strong> (urgente, moyenne, basse).
-              Sauvegarde automatique des données pour ne jamais perdre votre travail. Interface intuitive développée
-              avec
-              <strong>React</strong>.
-            </p>
-            <ul class="technos">
-              <li>ReactJS</li>
-              <li>TypeScript</li>
-              <li>Daisy UI</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/siomathisa/todolist_reactjs" target="_blank" rel="noopener noreferrer"
-                aria-label="Voir le code source du projet sur GitHub">Code source</a>
-              <a href="https://todolistreactjs-mv.netlify.app/" target="_blank" rel="noopener noreferrer"
-                aria-label="Tester le projet" class="btn-demo">Tester</a>
-            </div>
-          </article>
-          <article>
-            <img src="images/calculatrice.png" alt="Capture d'écran du projet" loading="lazy" width="300"
-              height="200" />
-            <h3>Calculatrice Interactive</h3>
-            <p>
-              Calculatrice web fonctionnelle qui gère toutes les opérations de base avec une interface
-              <strong>responsive</strong> et agréable,
-              utilisable au clavier ou à la souris.
-            </p>
-            <ul class="technos">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JS</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/siomathisa/calculatrice_js" target="_blank" rel="noopener noreferrer"
-                aria-label="Voir le code source du projet sur GitHub">Code source</a>
-              <a href="https://calculatrice-js-nine.vercel.app/" target="_blank" rel="noopener noreferrer"
-                aria-label="Tester le projet" class="btn-demo">Tester</a>
-            </div>
-          </article>
-          <article>
-            <img src="images/imcapp.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200" />
-            <h3>Calculateur d'IMC</h3>
-            <p>
-              Application desktop qui calcule votre <strong>Indice de Masse Corporelle</strong>
-              que vous pouvez comparer avec le graphique coloré inclus. Interface simple et efficace.
-            </p>
-            <ul class="technos">
-              <li>C#</li>
-              <li>Winforms</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/siomathisa/app_imc_csharp" target="_blank" rel="noopener noreferrer"
-                aria-label="Voir le code source du projet sur GitHub">Code source</a>
-            </div>
-          </article>
-        </div>
-      </section>
+      <a href="mailto:vidueiramathis@gmail.com" class="btn-contact" aria-label="M'envoyer un email">Me contacter par email</a><br> (vidueiramathis@gmail.com)
+    </section>
+  </main>
 
-      <section id="competences">
-        <h2>Compétences</h2>
-        <div class="competences-container">
-          <div class="competences-category">
-            <div class="category-header">
-              <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>
-              <h3>Développement</h3>
-            </div>
-            <div class="skills-grid">
-              <span class="skill-tag">HTML</span>
-              <span class="skill-tag">CSS</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">PHP</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">C#</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Git</span>
-            </div>
-          </div>
+  <!-- Bouton retour en haut -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut de la page" title="Retour en haut">↑</button>
 
-          <div class="competences-category">
-            <div class="category-header">
-              <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-                <path d="M12 12h.01"></path>
-              </svg>
-              <h3>Frameworks & Librairies</h3>
-            </div>
-            <div class="skills-grid">
-              <span class="skill-tag">NodeJS</span>
-              <span class="skill-tag">ReactJS</span>
-              <span class="skill-tag">Laravel</span>
-              <span class="skill-tag">Bootstrap</span>
-              <span class="skill-tag">TailwindCSS</span>
-              <span class="skill-tag">DaisyUI</span>
-            </div>
-          </div>
+  <footer>
+    <p>&copy; 2025 Mathis Vidueira. Tous droits réservés.</p>
+  </footer>
 
-          <div class="competences-category">
-            <div class="category-header">
-              <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-              </svg>
-              <h3>Outils & Productivité</h3>
-            </div>
-            <div class="skills-grid">
-              <span class="skill-tag">IA Génératives</span>
-              <span class="skill-tag">Microsoft 365</span>
-              <span class="skill-tag">Google Workspace</span>
-              <span class="skill-tag">LibreOffice</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">VS Code</span>
-            </div>
-          </div>
-
-          <div class="competences-category">
-            <div class="category-header">
-              <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-              </svg>
-              <h3>Design & Création</h3>
-            </div>
-            <div class="skills-grid">
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">UI/UX Design</span>
-              <span class="skill-tag">Montage vidéo & photo</span>
-              <span class="skill-tag">Canva</span>
-              <span class="skill-tag">CapCut</span>
-            </div>
-          </div>
-
-          <div class="competences-category">
-            <div class="category-header">
-              <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"></path>
-              </svg>
-              <h3>Soft Skills</h3>
-            </div>
-            <div class="skills-grid">
-              <span class="skill-tag">Travail d'équipe</span>
-              <span class="skill-tag">Autonomie</span>
-              <span class="skill-tag">Rigourosité</span>
-              <span class="skill-tag">Créativité</span>
-              <span class="skill-tag">Curiosité</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="alternance">
-        <h2>Ce que je recherche</h2>
-        <div class="alternance-container">
-          <div class="alternance-intro">
-            <p>
-              Je recherche une <strong>alternance d'un an</strong> pour valider mon Bachelor 3 en Développement Web.
-              Passionné par le digital et motivé par les nouveaux défis, je souhaite mettre mes compétences au service
-              d'une équipe dynamique tout en continuant à apprendre.
-            </p>
-          </div>
-
-          <div class="alternance-grid">
-            <div class="alternance-card">
-              <div class="alternance-icon">📅</div>
-              <h3>Durée & Rythme</h3>
-              <p><strong>1 an</strong> à partir de maintenant</p>
-              <p class="rythme">1 semaine école / 3 semaines entreprise</p>
-              <div class="alternance-icon">📍</div>
-              <h3>Localisation</h3>
-              <p><strong>Paris et proche banlieue</strong></p>
-              <p class="localisation-detail">Accessible en transports en commun depuis Sevran (93)</p>
-            </div>
-
-            <div class="alternance-card">
-              <div class="alternance-icon">💼</div>
-              <h3>Missions souhaitées</h3>
-              <ul>
-                <li>Développement web (front-end, back-end, full-stack)</li>
-                <li>Intégration web & création d'interfaces</li>
-                <li>Projets digitaux & communication</li>
-                <li>Maintenance & évolutions de sites</li>
-              </ul>
-            </div>
-
-            <div class="alternance-card">
-              <div class="alternance-icon">🎯</div>
-              <h3>Type d'entreprise</h3>
-              <ul>
-                <li>Agence digitale ou web</li>
-                <li>Startup innovante</li>
-                <li>ESN / Entreprise de services</li>
-                <li>Service digital d'une entreprise</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="alternance-cta">
-            <p>Votre entreprise correspond à ce profil ? Discutons-en !</p>
-            <a href="#contact" class="btn-contact">Me contacter</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="a-propos">
-        <h2>À propos</h2>
-        <div class="parcours">
-          <h3>Parcours Professionnel</h3>
-          <ul>
-            <li>
-              <strong>2024 - Développeur Web (stage 2 mois)</strong> chez
-              <a href="https://share.google/seSLNIs3xXia0CaO8" target="_blank" rel="noopener noreferrer">Restaurant La
-                Convivialité</a>
-              <br />
-              Refonte du site vitrine et maintenance front-end (Webador)
-            </li>
-            <li>
-              <strong>2023 - Responsable du service informatique (stage 1
-                mois)</strong> chez
-              <a href="https://www.ilot.asso.fr/" target="_blank" rel="noopener noreferrer">
-                Maison d'accueil l'îlot</a>
-              <br />
-              Déploiement de postes et inventaire du parc informatique
-            </li>
-          </ul>
-          <h3>Parcours Scolaire</h3>
-          <ul>
-            <li>
-              <strong>2025 - Bachelor 3 Développement Web</strong> Decode, Paris
-              (en cours)
-            </li>
-            <li>
-              <strong>2022-2024 - BTS SIO SLAM</strong> Lycée Voillaume,
-              Aulnay-sous-Bois
-            </li>
-            <li>
-              <strong>2019-2022 - Bac Général Mathématiques et Physique-Chimie
-                (Mention Bien)</strong>
-              Lycée André Boulloche, Livry-Gargan
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="centres-interet">
-        <h2>Quand je ne code pas...</h2>
-
-        <div class="interests-container">
-          <div class="interests-grid-full">
-            <div class="interest-card-full">
-              <div class="card-header">
-                <span class="interest-icon-large">🎾</span>
-                <h3>Tennis</h3>
-              </div>
-              <div class="card-content">
-                <div class="info-item"><strong>Classement :</strong> 15/5</div>
-                <div class="info-item">
-                  <strong>Joueur préféré :</strong> Rafael Nadal
-                </div>
-                <div class="info-item">
-                  <strong>Tournois :</strong> 2 à 5 par an
-                </div>
-
-                <p class="passion-text">
-                  Ce que j'aime dans le tennis, c'est la combativité que ça
-                  demande. Comme Nadal, je n'abandonne jamais un point. C'est un
-                  sport individuel où on se surpasse constamment, et l'ambiance
-                  dans les clubs est géniale !
-                </p>
-              </div>
-            </div>
-
-            <div class="interest-card-full">
-              <div class="card-header">
-                <span class="interest-icon-large">⚽</span>
-                <h3>Football</h3>
-              </div>
-              <div class="card-content">
-                <div class="info-item">
-                  <strong>Équipe :</strong> FC Barcelone / Espagne
-                </div>
-                <div class="info-item">
-                  <strong>Joueur préféré :</strong> Lionel Messi
-                </div>
-                <div class="info-item">
-                  <strong>Poste :</strong> Milieu défensif/central
-                </div>
-                <p class="passion-text">
-                  Je joue toutes les semaines avec mes amis. J'adore Messi pour
-                  son humilité et ses dribbles simples mais efficaces à 100%.
-                  Ce que je préfère ? Défendre et envoyer des caviars depuis le milieu de
-                  terrain.
-                </p>
-              </div>
-            </div>
-
-            <div class="interest-card-full">
-              <div class="card-header">
-                <span class="interest-icon-large">🎮</span>
-                <h3>Gaming</h3>
-              </div>
-              <div class="card-content">
-                <div class="info-item">
-                  <strong>Jeux favoris :</strong> FIFA, Fortnite, Rocket League, Minecraft
-                </div>
-                <div class="info-item">
-                  <strong>Plateformes :</strong> YouTube, Twitch
-                </div>
-                <p class="passion-text">
-                  Je joue depuis tout petit. Minecraft pour la créativité, FIFA
-                  pour le foot, Rocket League et Fortnite pour la compétition. Le gaming
-                  c'est de l'amusement avec mes amis et de la compétition. Je
-                  regarde beaucoup de streamers et j'aime bien voir des gens
-                  créer du contenu autour de leur passion.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>
-          Un projet en tête ? Une question ? N'hésitez pas à me contacter, je
-          serais ravi d'échanger avec vous !
-        </p>
-        <a href="mailto:vidueiramathis@gmail.com" class="btn-contact" aria-label="M'envoyer un email">Me contacter par
-          email</a>
-      </section>
-    </main>
-
-    <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut de la page" title="Retour en haut">
-      ↑
-    </button>
-
-    <footer>
-      <p>&copy; 2025 Mathis Vidueira. Tous droits réservés.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
-
+  <script src="script.js"></script>
+</body>
 </html>

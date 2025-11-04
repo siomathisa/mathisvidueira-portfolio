@@ -1,57 +1,40 @@
-// ========================================
-// PRELOADER
-// ========================================
+// PRELOADER - Cache l'animation de chargement
 window.addEventListener("load", () => {
   const preloader = document.querySelector(".preloader");
-  setTimeout(() => {
-    preloader.classList.add("hidden");
-  }, 800);
+  // Délai pour transition smooth
+  setTimeout(() => preloader.classList.add("hidden"), 800);
 });
 
-// ========================================
-// SCROLL PROGRESS BAR
-// ========================================
+// BARRE DE PROGRESSION AU SCROLL
 const scrollProgress = document.getElementById("scroll-progress");
 
 window.addEventListener("scroll", () => {
-  const windowHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  const scrolled = (window.scrollY / windowHeight) * 100;
-  scrollProgress.style.width = scrolled + "%";
+  // Calcul pourcentage scroll
+  const hauteurTotale = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const pourcentageScroll = (window.scrollY / hauteurTotale) * 100;
+  scrollProgress.style.width = `${pourcentageScroll}%`;
 });
 
-// ========================================
-// KONAMI CODE EASTER EGG (Version simplifiée)
-// ========================================
-const konamiCode = [
-  "ArrowUp",
-  "ArrowUp",
-  "ArrowDown",
-  "ArrowDown",
-  "ArrowLeft",
-  "ArrowRight",
-  "ArrowLeft",
-  "ArrowRight",
-];
+// EASTER EGG
+const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight"];
 let konamiIndex = 0;
 let matrixActive = false;
 
 document.addEventListener("keydown", (e) => {
-  // Konami code detection
+  // Vérification des touches
   if (e.key === konamiCode[konamiIndex]) {
     konamiIndex++;
-    console.log(`Progress: ${konamiIndex}/${konamiCode.length}`);
-
+    
+    // Easter egg activé !
     if (konamiIndex === konamiCode.length) {
       activateMatrixMode();
       konamiIndex = 0;
     }
   } else {
-    konamiIndex = 0;
+    konamiIndex = 0; // Reset si mauvaise touche
   }
 
-  // ESC to exit matrix mode
+  // ESC pour sortir de l'easter egg
   if (e.key === "Escape" && matrixActive) {
     deactivateMatrixMode();
   }
@@ -60,14 +43,12 @@ document.addEventListener("keydown", (e) => {
 function activateMatrixMode() {
   matrixActive = true;
   document.body.classList.add("matrix-mode");
+  
   const message = document.getElementById("matrix-message");
   message.classList.add("show");
 
-  console.log("🎮 MATRIX MODE ACTIVATED! 🎮");
-
-  setTimeout(() => {
-    message.classList.remove("show");
-  }, 3000);
+  // Cache le message après 3 secondes
+  setTimeout(() => message.classList.remove("show"), 3000);
 }
 
 function deactivateMatrixMode() {
@@ -76,61 +57,61 @@ function deactivateMatrixMode() {
   document.getElementById("matrix-message").classList.remove("show");
 }
 
-// ========================================
-// SCROLL TO TOP BUTTON
-// ========================================
+// BOUTON RETOUR EN HAUT
 const scrollBtn = document.getElementById("scroll-to-top");
+
 window.addEventListener("scroll", () => {
+  // Affiche le bouton après 300px de scroll
   scrollBtn.classList.toggle("visible", window.scrollY > 300);
 });
+
 scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// ========================================
-// INTEREST CARDS ANIMATION
-// ========================================
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
+// ANIMATION DES CARTES AU SCROLL
+const animerAuScroll = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  }
+);
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-    }
-  });
-}, observerOptions);
-
+// Applique l'animation sur toutes les cartes d'intérêts
 document.querySelectorAll(".interest-card-full").forEach((card) => {
   card.style.opacity = "0";
   card.style.transform = "translateY(30px)";
   card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  observer.observe(card);
+  animerAuScroll.observe(card);
 });
 
-// ========================================
-// THEME TOGGLE
-// ========================================
+// SWITCH THÈME CLAIR/SOMBRE
 const themeToggle = document.getElementById("theme-toggle");
 const html = document.documentElement;
 
-// Forcer le thème dark par défaut
+// Thème dark par défaut
 html.setAttribute("data-theme", "dark");
 localStorage.setItem("theme", "dark");
 
-// Charger le thème sauvegardé après le premier chargement
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) {
-  html.setAttribute("data-theme", savedTheme);
+// Récupère le thème sauvegardé si il existe
+const themeSauvegarde = localStorage.getItem("theme");
+if (themeSauvegarde) {
+  html.setAttribute("data-theme", themeSauvegarde);
 }
 
+// Toggle entre les thèmes
 themeToggle.addEventListener("click", () => {
-  const currentTheme = html.getAttribute("data-theme") || "dark";
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  const themeActuel = html.getAttribute("data-theme") || "dark";
+  const nouveauTheme = themeActuel === "dark" ? "light" : "dark";
 
-  html.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
+  html.setAttribute("data-theme", nouveauTheme);
+  localStorage.setItem("theme", nouveauTheme);
 });
