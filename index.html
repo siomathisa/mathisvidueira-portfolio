@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mathis Vidueira Portfolio</title>
-  <meta name="description" content="Portfolio de Mathis Vidueira, développeur web junior. Découvrez ses projets, compétences, parcours et contactez-le.">
-  
+  <meta name="description"
+    content="Portfolio de Mathis Vidueira, développeur web junior. Découvrez ses projets, compétences, parcours et contactez-le.">
+
   <!-- Favicon -->
   <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
-  
+
   <!-- Open Graph pour partage sur réseaux sociaux -->
   <meta property="og:title" content="Mathis Vidueira - Développeur Web Junior">
-  <meta property="og:description" content="Portfolio de Mathis Vidueira, développeur web junior passionné par la création de sites modernes et performants.">
+  <meta property="og:description"
+    content="Portfolio de Mathis Vidueira, développeur web junior passionné par la création de sites modernes et performants.">
   <meta property="og:image" content="https://mathisvidueira.github.io/images/og-image.jpg">
   <meta property="og:url" content="https://mathisvidueira.github.io">
   <meta property="og:type" content="website">
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mathis Vidueira - Développeur Web Junior">
@@ -41,7 +44,8 @@
 
   <!-- Bouton switch thème clair/sombre -->
   <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
-    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -52,7 +56,8 @@
       <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
       <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
     </svg>
-    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
     </svg>
   </button>
@@ -69,17 +74,21 @@
         <li><a href="#a-propos">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      
+
       <div class="nav-buttons">
-        <a href="https://github.com/siomathisa" target="_blank" class="btn-nav" rel="noopener noreferrer" aria-label="Voir mon profil GitHub">
+        <a href="https://github.com/siomathisa" target="_blank" class="btn-nav" rel="noopener noreferrer"
+          aria-label="Voir mon profil GitHub">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
           </svg>
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/mathis-vidueira/" target="_blank" class="btn-nav" rel="noopener noreferrer" aria-label="Voir mon profil LinkedIn">
+        <a href="https://www.linkedin.com/in/mathis-vidueira/" target="_blank" class="btn-nav" rel="noopener noreferrer"
+          aria-label="Voir mon profil LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
           </svg>
           LinkedIn
         </a>
@@ -94,9 +103,11 @@
       <a href="https://ecole-decode.fr/" target="_blank" rel="noopener noreferrer">Decode.</a>
     </p>
     <p class="important">
-      ⚠️ Je suis à la recherche d'une entreprise pour un contrat d'apprentissage en alternance dans le digital, disponible immédiatement.
+      ⚠️ Je suis à la recherche d'une entreprise pour un contrat d'apprentissage en alternance dans le digital,
+      disponible immédiatement.
     </p>
-    <a href="pdf/CV.pdf" class="btn-cv" download="CV-Mathis-Vidueira.pdf" aria-label="Télécharger mon CV en PDF">Télécharger mon CV</a>
+    <a href="pdf/CV.pdf" class="btn-cv" download="CV-Mathis-Vidueira.pdf"
+      aria-label="Télécharger mon CV en PDF">Télécharger mon CV</a>
   </header>
 
   <main id="main-content">
@@ -108,8 +119,10 @@
           <img src="images/gsbapp.png" alt="Logo GSB" loading="lazy" width="300" height="200">
           <h3>GSB App</h3>
           <p>
-            Application web de gestion médicale permettant aux visiteurs médicaux de consulter et gérer leurs rapports de visite.
-            Système complet avec <strong>authentification sécurisée</strong> et interface intuitive pour le suivi des données professionnelles.
+            Application web de gestion médicale permettant aux visiteurs médicaux de consulter et gérer leurs rapports
+            de visite.
+            Système complet avec <strong>authentification sécurisée</strong> et interface intuitive pour le suivi des
+            données professionnelles.
           </p>
           <ul class="technos">
             <li>PHP</li>
@@ -117,15 +130,17 @@
             <li>MVC</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/siomathisa/btssio_gsb_1_mvc_php" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+            <a href="https://github.com/siomathisa/btssio_gsb_1_mvc_php" target="_blank" rel="noopener noreferrer"
+              aria-label="Voir le code source du projet sur GitHub">Code source</a>
           </div>
         </article>
 
         <article>
           <img src="images/ecommerce-app.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200">
-          <h3>E-Commerce App</h3>
+          <h3>Site E-commerce</h3>
           <p>
-            Site e-commerce <strong>Laravel</strong> : Application complète avec authentification, gestion de produits, panier,
+            Site e-commerce <strong>Laravel</strong> : Application complète avec authentification, gestion de produits,
+            panier,
             commandes et espace administrateur
           </p>
           <ul class="technos">
@@ -134,16 +149,20 @@
             <li>TailwindCSS</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/siomathisa/ecommerce-laravel" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+            <a href="https://github.com/siomathisa/ecommerce-laravel" target="_blank" rel="noopener noreferrer"
+              aria-label="Voir le code source du projet sur GitHub">Code source</a>
           </div>
         </article>
 
         <article>
-          <img src="images/portfolio.png" alt="Capture d'écran de mon portfolio" loading="lazy" width="300" height="200">
-          <h3>Portfolio Personnel</h3>
+          <img src="images/portfoliolast.png" alt="Capture d'écran de mon portfolio" loading="lazy" width="300"
+            height="200">
+          <h3>Portfolio personnel</h3>
           <p>
-            Site vitrine moderne présentant mes projets et compétences. Design <strong>responsive</strong> adapté à tous les écrans,
-            optimisé pour le <strong>référencement SEO</strong> et les performances, avec animations fluides et interface soignée.
+            Site vitrine moderne présentant mes projets et compétences. Design <strong>responsive</strong> adapté à tous
+            les écrans,
+            optimisé pour le <strong>référencement SEO</strong> et les performances, avec animations fluides et
+            interface soignée.
           </p>
           <ul class="technos">
             <li>HTML</li>
@@ -151,24 +170,28 @@
             <li>JS</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/siomathisa/mathisvidueira-portfolio" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+            <a href="https://github.com/siomathisa/mathisvidueira-portfolio" target="_blank" rel="noopener noreferrer"
+              aria-label="Voir le code source du projet sur GitHub">Code source</a>
           </div>
         </article>
 
         <article>
-          <img src="images/todolist.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200">
-          <h3>Todo List Interactive</h3>
+          <img src="images/saas3.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200">
+          <h3>Saas Landing Page</h3>
           <p>
-            Dans le but d'apprendre <strong>React</strong>, j'ai réalisé une Todo List classique avec <strong>trois niveaux de priorité</strong> (urgente, moyenne, basse) et un stockage local.
+            Landing page complète pour produit SaaS incluant sections <strong>hero animée</strong>, pricing avec toggle
+            mensuel/annuel, FAQ accordéon et formulaire de contact. Design moderne et <strong>responsive</strong>.
           </p>
           <ul class="technos">
-            <li>ReactJS</li>
-            <li>TypeScript</li>
-            <li>Daisy UI</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/siomathisa/todolist_reactjs" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
-            <a href="https://todolistreactjs-mv.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Tester le projet" class="btn-demo">Tester</a>
+            <a href="https://github.com/siomathisa/saas-landing-page" target="_blank" rel="noopener noreferrer"
+              aria-label="Voir le code source du projet sur GitHub">Code source</a>
+            <a href="https://saas-landing-page-ashy-seven.vercel.app" target="_blank" rel="noopener noreferrer"
+              aria-label="Tester le projet" class="btn-demo">Démo</a>
           </div>
         </article>
 
@@ -176,7 +199,8 @@
           <img src="images/calculatrice.png" alt="Capture d'écran du projet" loading="lazy" width="300" height="200">
           <h3>Calculatrice Interactive</h3>
           <p>
-            Calculatrice web fonctionnelle qui gère toutes les opérations de base avec une interface <strong>responsive</strong> et agréable,
+            Calculatrice web fonctionnelle qui gère toutes les opérations de base avec une interface
+            <strong>responsive</strong> et agréable,
             utilisable au clavier ou à la souris.
           </p>
           <ul class="technos">
@@ -185,8 +209,10 @@
             <li>JS</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/siomathisa/calculatrice_js" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
-            <a href="https://calculatrice-js-nine.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Tester le projet" class="btn-demo">Tester</a>
+            <a href="https://github.com/siomathisa/calculatrice_js" target="_blank" rel="noopener noreferrer"
+              aria-label="Voir le code source du projet sur GitHub">Code source</a>
+            <a href="https://calculatrice-js-nine.vercel.app/" target="_blank" rel="noopener noreferrer"
+              aria-label="Tester le projet" class="btn-demo">Démo</a>
           </div>
         </article>
 
@@ -202,7 +228,8 @@
             <li>Winforms</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/siomathisa/app_imc_csharp" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source du projet sur GitHub">Code source</a>
+            <a href="https://github.com/siomathisa/app_imc_csharp" target="_blank" rel="noopener noreferrer"
+              aria-label="Voir le code source du projet sur GitHub">Code source</a>
           </div>
         </article>
       </div>
@@ -214,7 +241,8 @@
       <div class="competences-container">
         <div class="competences-category">
           <div class="category-header">
-            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
               <polyline points="16 18 22 12 16 6"></polyline>
               <polyline points="8 6 2 12 8 18"></polyline>
             </svg>
@@ -235,7 +263,8 @@
 
         <div class="competences-category">
           <div class="category-header">
-            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
               <rect x="2" y="6" width="20" height="12" rx="2"></rect>
               <path d="M12 12h.01"></path>
             </svg>
@@ -253,7 +282,8 @@
 
         <div class="competences-category">
           <div class="category-header">
-            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
               <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
               <polyline points="14 2 14 8 20 8"></polyline>
             </svg>
@@ -271,7 +301,8 @@
 
         <div class="competences-category">
           <div class="category-header">
-            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
               <circle cx="8.5" cy="8.5" r="1.5"></circle>
               <polyline points="21 15 16 10 5 21"></polyline>
@@ -289,7 +320,8 @@
 
         <div class="competences-category">
           <div class="category-header">
-            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg class="category-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
               <circle cx="9" cy="7" r="4"></circle>
               <path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"></path>
@@ -325,7 +357,7 @@
             <h3>Durée & Rythme</h3>
             <p><strong>1 an</strong> à partir de maintenant</p>
             <p class="rythme">1 semaine école / 3 semaines entreprise</p>
-            
+
             <div class="alternance-icon">📍</div>
             <h3>Localisation</h3>
             <p><strong>Paris et proche banlieue</strong></p>
@@ -370,7 +402,8 @@
         <ul>
           <li>
             <strong>2024 - Développeur Web (stage 2 mois)</strong> chez
-            <a href="https://share.google/seSLNIs3xXia0CaO8" target="_blank" rel="noopener noreferrer">Restaurant La Convivialité</a>
+            <a href="https://share.google/seSLNIs3xXia0CaO8" target="_blank" rel="noopener noreferrer">Restaurant La
+              Convivialité</a>
             <br>
             Refonte du site vitrine et maintenance front-end (Webador)
           </li>
@@ -381,7 +414,7 @@
             Déploiement de postes et inventaire du parc informatique
           </li>
         </ul>
-        
+
         <h3>Parcours Scolaire</h3>
         <ul>
           <li>
@@ -415,7 +448,8 @@
               <div class="info-item"><strong>Tournois :</strong> 2 à 5 par an</div>
 
               <p class="passion-text">
-                Ce que j'aime dans le tennis, c'est la combativité que ça demande. Comme Nadal, je n'abandonne jamais un point. C'est un
+                Ce que j'aime dans le tennis, c'est la combativité que ça demande. Comme Nadal, je n'abandonne jamais un
+                point. C'est un
                 sport individuel où on se surpasse constamment, et l'ambiance dans les clubs est géniale !
               </p>
             </div>
@@ -430,9 +464,10 @@
               <div class="info-item"><strong>Équipe :</strong> FC Barcelone / Espagne</div>
               <div class="info-item"><strong>Joueur préféré :</strong> Lionel Messi</div>
               <div class="info-item"><strong>Poste :</strong> Milieu défensif/central</div>
-              
+
               <p class="passion-text">
-                Je joue toutes les semaines avec mes amis. J'adore Messi pour son humilité et ses dribbles simples mais efficaces à 100%.
+                Je joue toutes les semaines avec mes amis. J'adore Messi pour son humilité et ses dribbles simples mais
+                efficaces à 100%.
                 Ce que je préfère ? Défendre et faire des passes décisives.
               </p>
             </div>
@@ -446,10 +481,12 @@
             <div class="card-content">
               <div class="info-item"><strong>Jeux favoris :</strong> FIFA, Fortnite, Rocket League, Minecraft</div>
               <div class="info-item"><strong>Plateformes :</strong> YouTube, Twitch</div>
-              
+
               <p class="passion-text">
-                Je joue depuis tout petit. Minecraft pour la créativité, FIFA pour le foot, Rocket League et Fortnite pour la compétition. Le gaming
-                c'est de l'amusement avec mes amis et de la compétition. Je regarde beaucoup de streamers et j'aime bien voir des gens
+                Je joue depuis tout petit. Minecraft pour la créativité, FIFA pour le foot, Rocket League et Fortnite
+                pour la compétition. Le gaming
+                c'est de l'amusement avec mes amis et de la compétition. Je regarde beaucoup de streamers et j'aime bien
+                voir des gens
                 créer du contenu autour de leur passion.
               </p>
             </div>
@@ -464,12 +501,14 @@
       <p>
         Un projet en tête ? Une question ? N'hésitez pas à me contacter, je serais ravi d'échanger avec vous !
       </p>
-      <a href="mailto:vidueiramathis@gmail.com" class="btn-contact" aria-label="M'envoyer un email">Me contacter par email</a><br> (vidueiramathis@gmail.com)
+      <a href="mailto:vidueiramathis@gmail.com" class="btn-contact" aria-label="M'envoyer un email">Me contacter par
+        email</a><br> (vidueiramathis@gmail.com)
     </section>
   </main>
 
   <!-- Bouton retour en haut -->
-  <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut de la page" title="Retour en haut">↑</button>
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Retour en haut de la page"
+    title="Retour en haut">↑</button>
 
   <footer>
     <p>&copy; 2025 Mathis Vidueira. Tous droits réservés.</p>
@@ -477,4 +516,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
