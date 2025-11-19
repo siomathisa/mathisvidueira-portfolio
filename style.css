@@ -397,6 +397,25 @@ nav ul li a:hover::after { width: 100%; }
   background: var(--accent);
 }
 
+.btn-contact-primary {
+  padding: 16px 48px !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 16px rgba(250, 250, 250, 0.15) !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.btn-contact-primary:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 14px 28px rgba(250, 250, 250, 0.25) !important;
+}
+
+[data-theme="light"] .btn-contact-primary:hover {
+  background: #0a0a0a !important;
+}
+
 /* ========================================
    SECTIONS PRINCIPALES
    ======================================== */
@@ -434,7 +453,7 @@ section h2 {
    ======================================== */
 .projets-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-bottom: 60px;
 }
