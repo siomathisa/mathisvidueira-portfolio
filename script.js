@@ -1,11 +1,10 @@
-// PRELOADER - Cache l'animation de chargement
+// Cache l'animation de chargement
 window.addEventListener("load", () => {
   const preloader = document.querySelector(".preloader");
   // Délai pour transition smooth
   setTimeout(() => preloader.classList.add("hidden"), 800);
 });
 
-// BARRE DE PROGRESSION AU SCROLL
 const scrollProgress = document.getElementById("scroll-progress");
 
 window.addEventListener("scroll", () => {
@@ -25,7 +24,6 @@ document.addEventListener("keydown", (e) => {
   if (e.key === konamiCode[konamiIndex]) {
     konamiIndex++;
     
-    // Easter egg activé !
     if (konamiIndex === konamiCode.length) {
       activateMatrixMode();
       konamiIndex = 0;
@@ -34,7 +32,6 @@ document.addEventListener("keydown", (e) => {
     konamiIndex = 0; // Reset si mauvaise touche
   }
 
-  // ESC pour sortir de l'easter egg
   if (e.key === "Escape" && matrixActive) {
     deactivateMatrixMode();
   }
@@ -47,7 +44,6 @@ function activateMatrixMode() {
   const message = document.getElementById("matrix-message");
   message.classList.add("show");
 
-  // Cache le message après 3 secondes
   setTimeout(() => message.classList.remove("show"), 3000);
 }
 
@@ -57,7 +53,6 @@ function deactivateMatrixMode() {
   document.getElementById("matrix-message").classList.remove("show");
 }
 
-// BOUTON RETOUR EN HAUT
 const scrollBtn = document.getElementById("scroll-to-top");
 
 window.addEventListener("scroll", () => {
@@ -69,7 +64,6 @@ scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// ANIMATION DES CARTES AU SCROLL
 const animerAuScroll = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -93,7 +87,6 @@ document.querySelectorAll(".interest-card-full").forEach((card) => {
   animerAuScroll.observe(card);
 });
 
-// SWITCH THÈME CLAIR/SOMBRE
 const themeToggle = document.getElementById("theme-toggle");
 const html = document.documentElement;
 
@@ -101,13 +94,11 @@ const html = document.documentElement;
 html.setAttribute("data-theme", "dark");
 localStorage.setItem("theme", "dark");
 
-// Récupère le thème sauvegardé si il existe
 const themeSauvegarde = localStorage.getItem("theme");
 if (themeSauvegarde) {
   html.setAttribute("data-theme", themeSauvegarde);
 }
 
-// Toggle entre les thèmes
 themeToggle.addEventListener("click", () => {
   const themeActuel = html.getAttribute("data-theme") || "dark";
   const nouveauTheme = themeActuel === "dark" ? "light" : "dark";
