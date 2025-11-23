@@ -9,13 +9,24 @@ const scrollProgress = document.getElementById("scroll-progress");
 
 window.addEventListener("scroll", () => {
   // Calcul pourcentage scroll
-  const hauteurTotale = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const hauteurTotale =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
   const pourcentageScroll = (window.scrollY / hauteurTotale) * 100;
   scrollProgress.style.width = `${pourcentageScroll}%`;
 });
 
 // EASTER EGG
-const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight"];
+const konamiCode = [
+  "ArrowUp",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowLeft",
+  "ArrowRight",
+];
 let konamiIndex = 0;
 let matrixActive = false;
 
@@ -23,7 +34,7 @@ document.addEventListener("keydown", (e) => {
   // Vérification des touches
   if (e.key === konamiCode[konamiIndex]) {
     konamiIndex++;
-    
+
     if (konamiIndex === konamiCode.length) {
       activateMatrixMode();
       konamiIndex = 0;
@@ -40,7 +51,7 @@ document.addEventListener("keydown", (e) => {
 function activateMatrixMode() {
   matrixActive = true;
   document.body.classList.add("matrix-mode");
-  
+
   const message = document.getElementById("matrix-message");
   message.classList.add("show");
 
@@ -106,3 +117,33 @@ themeToggle.addEventListener("click", () => {
   html.setAttribute("data-theme", nouveauTheme);
   localStorage.setItem("theme", nouveauTheme);
 });
+
+// ========================================
+// PARALLAX 3D EFFECT
+// ========================================
+const headerContainer = document.querySelector(".header-3d-container");
+const parallaxLayer = document.querySelector(".parallax-layer");
+
+if (headerContainer && parallaxLayer) {
+  document.addEventListener("mousemove", (e) => {
+    const rect = headerContainer.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = (y - centerY) * 0.01;
+    const rotateY = (centerX - x) * 0.01;
+
+    parallaxLayer.style.transform = `
+      rotateX(${rotateX}deg) 
+      rotateY(${rotateY}deg) 
+      translateZ(0)
+    `;
+  });
+
+  document.addEventListener("mouseleave", () => {
+    parallaxLayer.style.transform = "rotateX(0) rotateY(0) translateZ(0)";
+  });
+}

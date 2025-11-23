@@ -28,7 +28,11 @@
 
 <body>
   <div class="preloader">
-    <div class="loader"></div>
+    <div class="loader">
+      <div class="orbit"></div>
+      <div class="orbit"></div>
+      <div class="orbit"></div>
+    </div>
   </div>
 
   <div class="scroll-progress" id="scroll-progress"></div>
@@ -61,7 +65,7 @@
   <!-- Lien d'accessibilité -->
   <a href="#main-content" class="skip-to-main">Aller au contenu principal</a>
 
-  <header>
+  <header class="header-3d-container">
     <nav aria-label="Navigation principale">
       <ul>
         <li><a href="#projets">Projets</a></li>
@@ -91,19 +95,22 @@
       </div>
     </nav>
 
-    <img src="images/moi.jpg" alt="Photo de profil de Mathis Vidueira" class="profile-photo" width="150" height="150">
+    <div class="parallax-layer">
+      <img src="images/moi.jpg" alt="Photo de profil de Mathis Vidueira" class="profile-photo parallax-photo"
+        width="150" height="150">
 
-    <h1>Mathis Vidueira</h1>
-    <p>
-      Développeur Web Junior | Étudiant en Bachelor 3 Développement Web chez
-      <a href="https://ecole-decode.fr/" target="_blank" rel="noopener noreferrer">Decode.</a>
-    </p>
-    <p class="important">
-      ⚠️ Je suis à la recherche d'une entreprise pour un contrat d'apprentissage en alternance dans le digital,
-      disponible immédiatement.
-    </p>
-    <a href="pdf/CV.pdf" class="btn-cv" download="CV-Mathis-Vidueira.pdf"
-      aria-label="Télécharger mon CV en PDF">Télécharger mon CV</a>
+      <h1 class="parallax-title">Mathis Vidueira</h1>
+      <p class="parallax-subtitle">
+        Développeur Web Junior | Étudiant en Bachelor 3 Développement Web chez
+        <a href="https://ecole-decode.fr/" target="_blank" rel="noopener noreferrer">Decode.</a>
+      </p>
+      <p class="important parallax-important">
+        Je suis à la recherche d'une entreprise pour un contrat d'apprentissage en alternance dans le digital,
+        disponible immédiatement.
+      </p>
+      <a href="pdf/CV.pdf" class="btn-cv parallax-button" download="CV-Mathis-Vidueira.pdf"
+        aria-label="Télécharger mon CV en PDF">Télécharger mon CV</a>
+    </div>
   </header>
 
   <main id="main-content">
@@ -243,7 +250,7 @@
             <span class="skill-tag">NodeJS</span>
             <span class="skill-tag">Python</span>
             <span class="skill-tag">SQL</span>
-            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">C#</span>
           </div>
         </div>
 
@@ -279,6 +286,8 @@
             <span class="skill-tag">GitHub</span>
             <span class="skill-tag">VS Code</span>
             <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Laragon</span>
+            <span class="skill-tag">Visual Studio</span>
           </div>
         </div>
 
@@ -296,6 +305,9 @@
             <span class="skill-tag">Figma</span>
             <span class="skill-tag">UI/UX Design</span>
             <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">Capcut</span>
+            <span class="skill-tag">Blender</span>
           </div>
         </div>
 
@@ -315,6 +327,7 @@
             <span class="skill-tag">Rigurosité</span>
             <span class="skill-tag">Créativité</span>
             <span class="skill-tag">Curiosité</span>
+            <span class="skill-tag">Adaptabilité</span>
           </div>
         </div>
       </div>
