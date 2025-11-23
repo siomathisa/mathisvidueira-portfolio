@@ -1,36 +1,27 @@
-/* ========================================
-   RESET & VARIABLES CSS
-   ======================================== */
-*,
-::before,
-::after {
+/* RESET & VARIABLES CSS */
+*, ::before, ::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 :root {
-  /* Couleurs thème sombre (par défaut) */
+  /* Thème sombre (par défaut) */
   --bg-primary: #0a0a0a;
   --bg-secondary: #141414;
   --bg-tertiary: #1a1a1a;
-
   --text-primary: #fafafa;
   --text-secondary: #a3a3a3;
   --text-tertiary: #525252;
-
   --border-light: #262626;
   --border-medium: #404040;
-
   --accent: #e5e5e5;
 
-  /* Espacements réutilisables */
   --spacing-xs: 8px;
   --spacing-sm: 15px;
   --spacing-md: 25px;
   --spacing-lg: 40px;
   --spacing-xl: 80px;
-
   --border-radius: 8px;
   --transition: all 0.3s ease;
 }
@@ -40,17 +31,15 @@
   --bg-primary: #fafafa;
   --bg-secondary: #ffffff;
   --bg-tertiary: #f5f5f5;
-
   --text-primary: #0a0a0a;
   --text-secondary: #525252;
   --text-tertiary: #a3a3a3;
-
   --border-light: #e5e5e5;
   --border-medium: #d4d4d4;
-
   --accent: #171717;
 }
 
+/* UTILITAIRES GLOBAUX */
 html {
   scroll-behavior: smooth;
 }
@@ -65,15 +54,12 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Transitions globales pour le changement de thème */
-*,
-body {
+/* Transitions changement de thème */
+*, body {
   transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
-/* ========================================
-   BARRE DE PROGRESSION & PRELOADER
-   ======================================== */
+/* BARRE DE PROGRESSION & PRELOADER */
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -174,9 +160,7 @@ body {
   }
 }
 
-/* ========================================
-   MODE MATRIX (Easter Egg Konami Code)
-   ======================================== */
+/* MODE MATRIX (Easter Egg Konami Code) */
 body.matrix-mode {
   background: #000 !important;
   color: #0f0 !important;
@@ -238,9 +222,7 @@ body.matrix-mode .btn-demo {
   }
 }
 
-/* ========================================
-   BOUTON DE CHANGEMENT DE THÈME
-   ======================================== */
+/* BOUTON DE CHANGEMENT DE THÈME */
 .theme-toggle {
   position: fixed;
   top: 20px;
@@ -269,7 +251,7 @@ body.matrix-mode .btn-demo {
   color: var(--text-primary);
 }
 
-/* Gestion de l'affichage des icônes selon le thème */
+/* Gestion affichage des icônes selon le thème */
 .theme-toggle .sun-icon {
   display: block;
 }
@@ -286,9 +268,7 @@ body.matrix-mode .btn-demo {
   display: block;
 }
 
-/* ========================================
-   CLASSES UTILITAIRES
-   ======================================== */
+/* CLASSES UTILITAIRES */
 .important {
   color: var(--text-primary);
   font-weight: 600;
@@ -312,9 +292,7 @@ body.matrix-mode .btn-demo {
   top: 10px;
 }
 
-/* ========================================
-   ANIMATIONS
-   ======================================== */
+/* ANIMATIONS */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -337,12 +315,7 @@ body.matrix-mode .btn-demo {
   }
 }
 
-/* ========================================
-   HEADER & NAVIGATION
-   ======================================== */
-/* ========================================
-   PARALLAX 3D HEADER
-   ======================================== */
+/* PARALLAX 3D HEADER */
 .header-3d-container {
   perspective: 1000px;
 }
@@ -377,6 +350,7 @@ body.matrix-mode .btn-demo {
   transform: translateZ(30px);
 }
 
+/* HEADER & NAVIGATION*/
 header {
   background: var(--bg-secondary);
   padding: var(--spacing-xl) 20px 120px;
@@ -452,7 +426,6 @@ nav ul li a {
   position: relative;
 }
 
-/* Petit effet de soulignement au survol */
 nav ul li a::after {
   content: '';
   position: absolute;
@@ -506,9 +479,7 @@ nav ul li a:hover::after {
   transform: scale(1.05);
 }
 
-/* ========================================
-   BOUTONS PRINCIPAUX
-   ======================================== */
+/* BOUTONS PRINCIPAUX */
 .btn-cv,
 .btn-contact {
   display: inline-block;
@@ -552,9 +523,7 @@ nav ul li a:hover::after {
   background: #0a0a0a !important;
 }
 
-/* ========================================
-   SECTIONS PRINCIPALES
-   ======================================== */
+/* SECTIONS PRINCIPALES */
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -567,7 +536,7 @@ section {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Animation en cascade pour chaque section */
+/* Animation cascade pour chaque section */
 section:nth-child(1) {
   animation-delay: 0.1s;
 }
@@ -601,9 +570,7 @@ section h2 {
   font-weight: 700;
 }
 
-/* ========================================
-   GRILLE DE PROJETS
-   ======================================== */
+/* GRILLE DE PROJETS */
 .projets-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -637,7 +604,6 @@ section h2 {
   background: var(--bg-tertiary);
 }
 
-/* Petit effet grayscale en mode clair */
 [data-theme="light"] .projets-list article img {
   filter: grayscale(20%);
 }
@@ -732,9 +698,7 @@ section h2 {
   transform: translateY(-2px);
 }
 
-/* ========================================
-   CTA PROJETS - VOIR PLUS
-   ======================================== */
+/* CTA PROJETS - VOIR PLUS */
 .projects-cta {
   text-align: center;
   padding: 50px 30px;
@@ -788,9 +752,7 @@ section h2 {
   transform: scale(1.1);
 }
 
-/* ========================================
-   COMPÉTENCES
-   ======================================== */
+/* COMPÉTENCES */
 .competences-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -855,9 +817,7 @@ section h2 {
   transform: translateY(-2px);
 }
 
-/* ========================================
-   SECTION ALTERNANCE
-   ======================================== */
+/* SECTION ALTERNANCE */
 .alternance-container {
   max-width: 900px;
   margin: 0 auto;
@@ -982,9 +942,7 @@ section h2 {
   font-weight: 600;
 }
 
-/* ========================================
-   À PROPOS - PARCOURS
-   ======================================== */
+/* À PROPOS - PARCOURS*/
 .parcours {
   max-width: 800px;
   margin: 0 auto;
@@ -1037,9 +995,7 @@ section h2 {
   border-bottom-color: var(--text-primary);
 }
 
-/* ========================================
-   CONTACT
-   ======================================== */
+/* CONTACT */
 #contact {
   text-align: center;
 }
@@ -1050,9 +1006,7 @@ section h2 {
   font-size: 1.1rem;
 }
 
-/* ========================================
-   CENTRES D'INTÉRÊT
-   ======================================== */
+/* CENTRES D'INTÉRÊT */
 .interests-container {
   background: var(--bg-secondary);
   border: 1px solid var(--border-light);
@@ -1123,9 +1077,7 @@ section h2 {
   font-size: 0.95rem;
 }
 
-/* ========================================
-   BOUTON RETOUR EN HAUT & FOOTER
-   ======================================== */
+/* BOUTON RETOUR EN HAUT & FOOTER */
 .scroll-to-top {
   position: fixed;
   bottom: 30px;
@@ -1165,9 +1117,7 @@ footer p {
   color: var(--text-tertiary);
 }
 
-/* ========================================
-   RESPONSIVE - MOBILE
-   ======================================== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .theme-toggle {
     top: 15px;

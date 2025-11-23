@@ -118,9 +118,7 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("theme", nouveauTheme);
 });
 
-// ========================================
-// PARALLAX 3D EFFECT
-// ========================================
+// Parallax 3D
 const headerContainer = document.querySelector(".header-3d-container");
 const parallaxLayer = document.querySelector(".parallax-layer");
 
